@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contadores</title>
+</head>
+<body>
+    <p>Introduce un número:</p>
+    <input type="number" id="numeroInput">
+    <button onclick="mostrarResultados()">Mostrar Resultados</button>
+    <h2>Resultados:</h2>
+    <p id="resultadoNumero"></p>
+    <p id="resultadoBases"></p>
+
+    <script>
+        function mostrarResultados() {
+            // Obtener el número introducido por el usuario
+            var numero = parseInt(document.getElementById("numeroInput").value);
+
+            // Inicializar los contadores
+            var  base1 = numero.toString(16);
+            var  base2 = numero.toString(5);
+
+            // Mostrar los resultados en la página
+            var resultadoNumero = "Número introducido: " + numero;
+            var resultadoContadores = "Numero en base 16: " + base1 + "\tNumero en base 5: " + base2;
+
+            document.getElementById("resultadoNumero").textContent = resultadoNumero;
+            document.getElementById("resultadoBases").textContent = resultadoContadores;
+        }
+    </script>
+</body>
+</html>
