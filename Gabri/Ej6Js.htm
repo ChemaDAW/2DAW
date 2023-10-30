@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p onmouseover="cambiarColor(this)">Pasa el raton y cambia de color</p>
+<p onmouseover="cambiarColor(this)" onmouseout="restaurarColor(this)">Pasa el ratón por encima de este párrafo.</p>
+<input type="text" onblur="validarEntrada(this)">
+
+
+<script>
+function cambiarColor(elemento) {
+    elemento.style.color = "blue";
+}
+function cambiarColor(elemento) {
+    elemento.style.color = "blue";
+}
+
+function restaurarColor(elemento) {
+    elemento.style.color = "black";
+}
+function validarEntrada(elemento) {
+    const valor = elemento.value;
+    if (valor === "") {
+        alert("El campo no puede estar vacío");
+    }
+}
+</script>
+
+</body>
+</html>
