@@ -1,0 +1,65 @@
+<!--Hecho por Jose Maria Fernandez Garzon-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tablas Chema</title>
+</head>
+<body>
+  <h1>tablas del 7,8,9 y desplazamieto de bits</h1>
+
+  <div>
+    <h2>tabla de multiplicar del 7:</h2>
+    <pre id="tablaMultiplicar7For"></pre>
+  </div>
+
+  <div>
+    <h2>Tabla de sumar del 8 (while):</h2>
+    <pre id="tablaSumar8While"></pre>
+  </div>
+
+  <div>
+    <h2>Tabla de dividir del 9 (do-while):</h2>
+    <pre id="tablaDividir9DoWhile"></pre>
+  </div>
+
+  <div>
+    <h2>Operaciones de Desplazamiento de Bits:</h2>
+    <pre id="operacionesDesplazamientoBits"></pre>
+  </div>
+
+  <script>
+    // Tabla de multiplicar del 7 utilizando un bucle for
+    let tablaMultiplicar7For = "Tabla de multiplicar del 7 (for):\n";
+    for (let i = 1; i <= 10; i++) {
+      tablaMultiplicar7For += `7 x ${i} = ${7 * i}\n`;
+    }
+    document.getElementById("tablaMultiplicar7For").textContent = tablaMultiplicar7For;
+
+    // Tabla de sumar del 8 utilizando un bucle while
+    let tablaSumar8While = "Tabla de sumar del 8 (while):\n";
+    let j = 1;
+    while (j <= 10) {
+      tablaSumar8While += `8 + ${j} = ${8 + j}\n`;
+      j++;
+    }
+    document.getElementById("tablaSumar8While").textContent = tablaSumar8While;
+
+    // Tabla de dividir del 9 utilizando un bucle do-while
+    let tablaDividir9DoWhile = "Tabla de dividir del 9 (do-while):\n";
+    let k = 1;
+    do {
+      tablaDividir9DoWhile += `9 ÷ ${k} = ${9 / k}\n`;
+      k++;
+    } while (k <= 10);
+    document.getElementById("tablaDividir9DoWhile").textContent = tablaDividir9DoWhile;
+
+    // Operaciones de desplazamiento de bits
+    let operacionesDesplazamientoBits = "Operaciones de Desplazamiento de Bits:\n";
+    operacionesDesplazamientoBits += `125 / 8 = ${125 >> 3}\n`;
+    operacionesDesplazamientoBits += `40 x 4 = ${40 << 2}\n`;
+    operacionesDesplazamientoBits += `25 / 2 = ${25 >> 1}\n`;
+    operacionesDesplazamientoBits += `10 x 16 = ${10 << 4}\n`;
+    document.getElementById("operacionesDesplazamientoBits").textContent = operacionesDesplazamientoBits;
+  </script>
+</body>
+</html>
