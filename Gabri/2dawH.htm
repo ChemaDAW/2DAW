@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contadores</title>
+</head>
+<body>
+    <!--CODIGO HTML-->
+    <p>Introduce un número:</p>
+    <!--Pedimos el numero-->
+    <input type="number" id="numeroInput">
+    <!--Boton con la funcion-->
+    <button onclick="mostrarResultados()">Mostrar Resultados</button>
+    <h2>Resultados:</h2>
+    <!--Escribimos resultado-->
+    <p id="resultadoNumero"></p>
+    <p id="resultadoBases"></p>
+    <!--CODIGO JAVASCRIPT-->
+    <script>
+        function mostrarResultados() {
+            // Obtener el número entero introducido por el usuario
+            var numero = parseInt(document.getElementById("numeroInput").value);
+            //Base 16(Convertir)
+            var  base1 = numero.toString(16);
+            //Base 5(Convertir)
+            var  base2 = numero.toString(5);
+            // Creamos variables para mostrar los numeros
+            var resultadoNumero = "Número introducido: " + numero;
+            var resultadoContadores = "Numero en base 16: " + base1 + "\tNumero en base 5: " + base2;
+
+            document.getElementById("resultadoNumero").textContent = resultadoNumero;//Lo subo al html por ID y se muestra en el parrafo
+            document.getElementById("resultadoBases").textContent = resultadoContadores;
+        }
+    </script>
+</body>
+</html><!--Fin del html-->
