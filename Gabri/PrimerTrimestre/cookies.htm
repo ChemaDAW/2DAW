@@ -1,0 +1,13 @@
+<script>
+  // Función para crear una cookie
+  var nombre=prompt();
+function crearCookie(nombre, valor, diasParaExpirar) {
+  var fechaExpiracion = new Date();
+  fechaExpiracion.setTime(fechaExpiracion.getTime() + (diasParaExpirar * 24 * 60 * 60 * 1000));
+  var expira = "expires=" + fechaExpiracion.toUTCString();
+  document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
+}
+
+// Ejemplo de uso
+crearCookie("miCookie", "Este es el valor de mi cookie", 7); // Crea una cookie que expira en 7 días
+</script>
