@@ -1,0 +1,10 @@
+<script>
+  document.cookie = "usuario=Chema";
+  var usuarioCookie = "Chema";
+  document.cookie = "usuario=" + encodeURIComponent(usuarioCookie);
+  document.cookie = "usuario=Chema; expires=Sat, 6 Aug 2024 12:15:00 GMT";
+</script>
+
+<button type="button" onclick='document.cookie="usuario=Chema; expires=; Sat, 6 Aug 2024 12:15:00 GMT"'>Crear una Cookie</button>
+<button type="button" onclick='alert(document.cookie)'>Ver las cookies</button>
+<button type="button" onclick="document.cookie = 'usuario=; expires=Thu, 01 Jan 1999 00:00:00 GMT'">Borrar Cookies</button>
