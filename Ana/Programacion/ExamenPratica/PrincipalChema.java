@@ -102,7 +102,6 @@ public class PrincipalChema {
         nombre = teclado.nextLine();
         System.out.println("¿Cual es el jinete?");
         nombre = teclado.nextLine();
-        cuadras.
         try {
             System.out.println("Indica la cuadra donde se dará de alta este caballo (0-" + (cuadras.size() - 1) + "):");
             numCuadra = teclado.nextInt();

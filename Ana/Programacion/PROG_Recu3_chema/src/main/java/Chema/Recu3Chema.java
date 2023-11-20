@@ -1,5 +1,3 @@
-/*CHEMA FERNANDEZ
-La relacion que existe es de composicion,dado que si hacemos la pregunta de es o tiene,esfera tiene o contienen puntos*/
 
 import java.util.*;
 
