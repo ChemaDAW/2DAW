@@ -1,0 +1,34 @@
+<script>
+    class Persona {
+        constructor(nombre, contraseña) {
+            this.nombre = nombre;
+            this.contraseña = contraseña;
+        }
+        login(nombre, contraseña) {
+        if (this.nombre === nombre && this.contraseña === contraseña) {
+            console.log('Sesion iniciada con exito');
+        } else {
+            console.log('Credenciales incorrectas');
+        }
+    }
+    };
+
+    const persona=new Persona('chema','hola1234');
+    persona.login('chema', 'hola1234')
+
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
