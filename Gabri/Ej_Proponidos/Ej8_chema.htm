@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="funcionaEstepona()">Comprueba unshift</button>
+    <script>
+        var perrillos = {
+            nombre: ['Rocket', 'Flash', 'Bella', 'Slugger'],
+            ciudades: ['Manchester', 'London', 'Liverpool', 'Birmingham', 'Leeds', 'Carlisle'],
+        };
+        perrillos.nombre = perrillos.nombre.filter(function(nombre) {
+            return !/C/i.test(nombre); // La expresión regular /C/i es insensible a mayúsculas y minúsculas
+        });
+
+        perrillos.ciudades = perrillos.ciudades.filter(function(ciudad) {
+            return !/C/i.test(ciudad);
+        });
+        alert("Nombres de perros: " + perrillos.nombre.toString() + "\nCiudades: " + perrillos.ciudades.toString());
+        function funcionaEstepona(){
+            perrillos.unshift('Estepona');
+        }
+    </script>
+</body>
+</html>

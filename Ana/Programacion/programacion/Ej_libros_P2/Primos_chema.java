@@ -5,7 +5,7 @@ public class Primos_chema//HECHO POR JOSE MARIA FERNANDEZ GARZON
      public static void main (String args[])
      {
      //DECLARACION DE VARIABLES
-      boolean condicion;
+      boolean condicion=false;
       int num1;
     Scanner teclado=new Scanner(System.in);
     //DESARROLO DEL PROGRAMA
@@ -15,18 +15,18 @@ public class Primos_chema//HECHO POR JOSE MARIA FERNANDEZ GARZON
         {
             if(num1%i==0)
             condicion=false;
-            break;
+            
            
 
-             if(condicion){
-                System.out.println(num1+" Es primo") ;  }
-             else{
-                System.out.println(num1+" No es primo")  ; }
+            if(condicion){
+               System.out.println(num1+" Es primo") ;  }
+            else{
+               System.out.println(num1+" No es primo")  ; }
         
-             }
+             
       
     
-    
+        }
     }//FIN_MAIN
 }//FIN_CLASS
 

@@ -1,4 +1,11 @@
 <script>
+<<<<<<< HEAD
+  document.cookie = "usuario=Chema";
+  var usuarioCookie = "Chema";
+  document.cookie = "usuario=" + encodeURIComponent(usuarioCookie);
+  document.cookie = "usuario=Chema; expires=Sat, 6 Aug 2024 12:15:00 GMT";
+</script>
+=======
   // Función para crear una cookie
   var nombre=prompt()
 function crearCookie(nombre, valor, diasParaExpirar) {
@@ -7,7 +14,8 @@ function crearCookie(nombre, valor, diasParaExpirar) {
   var expira = "expires=" + fechaExpiracion.toUTCString();
   document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
 }
+>>>>>>> 49b08aa3f2087e0432888da887891e46b3c92a14
 
-// Ejemplo de uso
-crearCookie("miCookie", "Este es el valor de mi cookie", 7); // Crea una cookie que expira en 7 días
-</script>
+<button type="button" onclick='document.cookie="usuario=Chema; expires=; Sat, 6 Aug 2024 12:15:00 GMT"'>Crear una Cookie</button>
+<button type="button" onclick='alert(document.cookie)'>Ver las cookies</button>
+<button type="button" onclick="document.cookie = 'usuario=; expires=Thu, 01 Jan 1999 00:00:00 GMT'">Borrar Cookies</button>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Última Posición de Palabra</title>
+</head>
+<body>
+  <label for="fraseInput">Ingresa una frase:</label>
+  <input type="text" id="fraseInput">
+  <label for="palabraInput">Ingresa una palabra o substring:</label>
+  <input type="text" id="palabraInput">
+  <br>
+  <button onclick="UltimaPosicion()">Obtener Última Posición</button>
+  <p id="resultado"></p>
+
+  <script>
+    function UltimaPosicion() {
+      var frase = document.getElementById("fraseInput").value;
+      var palabra = document.getElementById("palabraInput").value;
+      if (frase === "" || palabra === "") {
+        alert("Por favor, ingresa una frase y una palabra.");
+        return;
+      }
+      var ultimaPosicion = frase.lastIndexOf(palabra)+1;
+      if(ultimaPosicion==0){
+        document.getElementById("resultado").innerHTML = "No esta esa palabra en la frase";
+    }else{
+        document.getElementById("resultado").innerHTML = "La última posición de '" + palabra + "' es: " + ultimaPosicion;
+    }
+      
+    }
+  </script>
+
+</body>
+</html>

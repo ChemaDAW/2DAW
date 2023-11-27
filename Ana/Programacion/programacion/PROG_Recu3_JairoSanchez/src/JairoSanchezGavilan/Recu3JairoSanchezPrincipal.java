@@ -134,6 +134,8 @@ public class Recu3JairoSanchezPrincipal {
         c=Character.toLowerCase(c);
         salir = c=='s';
         return salir;
+       
+            
     }
         public static int pedirNum() {
         int num;

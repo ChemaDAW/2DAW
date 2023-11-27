@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<body>
+
+    <h2>Crear Cookies</h2>
+
+    <script>
+        // Función para establecer una cookie
+        function establecerCookie(nombre, contenido, diasExpiracion) {
+            var fechaExpiracion = new Date();
+            fechaExpiracion.setTime(fechaExpiracion.getTime() + (diasExpiracion * 24 * 60 * 60 * 1000));
+
+            var expiracion = "expires=" + fechaExpiracion.toUTCString();
+            document.cookie = nombre + "=" + contenido + ";" + expiracion + ";path=/";
+        }
+
+        // Establecer dos cookies con nombres y contenidos personalizados
+        establecerCookie("miCookie1", "Contenido de la Cookie 1", 7);
+        establecerCookie("miCookie2", "Contenido de la Cookie 2", 7);
+
+        alert("Cookies establecidas con éxito.");
+    </script>
+
+</body>
+</html>

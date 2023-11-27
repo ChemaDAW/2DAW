@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej7</title>
+</head>
+<body>
+    <button onclick="persona.saludar()">Saludar</button>
+    <button onclick="persona.bio()">Biografía</button>
+
+    <script>
+        var persona = {
+            nombre: 'chema',
+            edad: 19,
+            sexo: 'masculino',
+            intereses: 'baloncesto',
+            bio: function () {
+                alert(this.nombre + " tiene " + this.edad + " años, tiene sexo " + this.sexo + " y le gusta el " + this.intereses);
+            },
+            saludar: function () {
+                alert('Hola, me llamo ' + this.nombre);
+            }
+        };
+    </script>
+</body>
+</html>
