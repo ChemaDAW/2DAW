@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <title>Página con Javascript</title>
+   <script language="javascript">
+      var parametros = "width=400, height=300, left=200, top=150, resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no";
+      var ventana;
+
+      function abrirVentana() {
+         ventana = window.open("texto_de_secundaria_2.htm", "ventana", parametros);
+      }
+
+      function pedirCoordenadas() {
+         if (ventana && !ventana.closed) {
+            const x = ventana.screenX;
+            const y = ventana.screenY;
+
+            const nuevasX = prompt('Ingrese la nueva coordenada X:', x);
+            const nuevasY = prompt('Ingrese la nueva coordenada Y:', y);
+
+            ventana.moveTo(nuevasX,nuevasY);
+         } else {
+            alert('La ventana secundaria no está abierta.');
+         }
+      }
+      function aplicarColor() {
+         const select = document.getElementById("colores");
+         const colorSeleccionado = select.value;
+         ventana.document.body.style.backgroundColor = colorSeleccionado;
+      }
+   </script>
+</head>
+<body>
+   <h3>1-Abrir ventana</h3>
+   <button onClick="abrirVentana();"> Pulse. </button>
+
+   <h3>2-Cerrar ventana</h3>
+   <button onclick="ventana.close()">Cerrar Ventana Secundaria</button>
+
+   <h3>3-Pedir coordenadas</h3>
+   <button onclick="pedirCoordenadas()">Pedir Coordenadas</button>
+
+   <h3>4-Seleccionar color</h3>
+   <select id="colores">
+      <option value="red">Rojo</option>
+      <option value="blue">Azul</option>
+      <option value="green">Verde</option>
+   </select>
+   <button onclick="aplicarColor()">Aplicar Color</button>
+</body>
+</html>
