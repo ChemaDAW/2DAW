@@ -110,22 +110,3 @@ function ej12(){
       alert("Las cookies no están activas en este navegador. Habilítalas para un mejor funcionamiento del sitio.");
     }
   }
-
-  var horas = miFecha.getHours();
-var minutos = miFecha.getMinutes();
-var segundos = miFecha.getSeconds();
-
-  function configurarCuentaRegresiva() {
-    var horas = parseInt(document.getElementById("horas").value) || 0;
-    var minutos = parseInt(document.getElementById("minutos").value) || 0;
-    var segundos = parseInt(document.getElementById("segundos").value) || 0;
-    var duracion = (horas * 3600) + (minutos * 60) + segundos;
-  
-    if (duracion > 0) {
-      clearInterval(x); // No se muestra la variable x en el código proporcionado, asegúrate de definirla antes de llamar a clearInterval(x).
-      actualizarContador(duracion);
-    } else {
-      alert("Por favor, introduce una duración válida.");
-    }
-  }
-  
