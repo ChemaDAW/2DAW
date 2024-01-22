@@ -8,7 +8,7 @@ public class Ejarrays// HECHO POR JOSE MARIA FERNANDEZ GARZON
 
     public static void main(String args[]) {
         menu();
-        
+
     }// FIN_MAIN
 
     public static void verVector() {
@@ -143,7 +143,6 @@ public class Ejarrays// HECHO POR JOSE MARIA FERNANDEZ GARZON
     public static void esPolindromo() {
         System.out.print("Introduce una frase: ");
         String frase = teclado.nextLine();
-
         frase = frase.replace(" ", "");
         frase = frase.replace(",", "");
         frase = frase.replace(".", "");
@@ -152,7 +151,6 @@ public class Ejarrays// HECHO POR JOSE MARIA FERNANDEZ GARZON
         int fin = frase.length() - 1;
         int ini = 0;
         boolean palindromo = false;
-
         while (ini < fin) {
             if (frase.charAt(ini) == frase.charAt(fin)) {
                 palindromo = true;

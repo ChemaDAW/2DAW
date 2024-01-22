@@ -13,8 +13,7 @@ public class ejercicio5_19 {
             System.out.println("Dime los dorsales,cuando introduzcas un -1 para");
             dorsal = teclado.nextInt();
             dorsales = dorsales + " " + dorsal;
-
-        } while (dorsal == -1);
+        } while (dorsal != -1);
     }
 
 }
