@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <title>Página con Javascript</title>
+   <script src="script.js"></script>
+</head>
+<body>
+   <h3>1-Abrir ventana</h3>
+   <button onClick="abrirVentana();"> Abrir</button>
+
+   <h3>2-Cerrar ventana</h3>
+   <button onclick="ventana.close()">Cerrar Ventana Secundaria</button>
+
+   <h3>3-Pedir coordenadas</h3>
+   <button onclick="pedirCoordenadas()">Pedir Coordenadas</button>
+
+   <h3>4-Seleccionar color</h3>
+   <select id="colores">
+      <option value="red">Rojo</option>
+      <option value="blue">Azul</option>
+      <option value="green">Verde</option>
+   </select>
+   <button onclick="aplicarColor()">Aplicar Color</button>
+   <h3>5-Utilizar focus y blur</h3>
+   <button onclick="blurVentana()">Hacer blur</button>
+   <button onclick="focusVentana()">Hacer focus</button>
+   <h3>6-Cerrar ventana po tiempo</h3>
+   <button onclick="cerrarVentanaTiempo()">Cerrar ventana</button>
+   <h3>7-Poner texto en la ventana segundaria</h3>
+   <button onclick="escrbirTexto()">Escribir texto en segundaria</button>
+   <h3>8-Poner color y tamaño al texto</h3>
+   <button onclick="">Poner tamaño,color.</button>
+</body>
+</html>

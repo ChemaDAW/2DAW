@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba Practica RA4_abcde</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .window {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #000;
+    }
+    #window1 { top: 0; left: 0; background-color: lightgreen; }
+    #window2 { top: 0; right: 0; background-color: lightblue; }
+    #window3 { bottom: 0; right: 0; background-color: lightpink; }
+    #window4 { bottom: 0; left: 0; background-color: orange; }
+    select, button {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="window" id="window1">
+      <form id="loginForm">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" required><br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required><br>
+        <label for="newPassword">Nueva Contraseña:</label>
+        <input type="password" id="newPassword" required><br>
+        <button type="button" onclick="authenticate()">Iniciar sesión</button>
+      </form>
+    </div>
+
+    <div class="window" id="window2">
+      <select id="lengthSelect">
+        <!-- Options for selecting the length of the list -->
+      </select>
+      <select id="countSelect">
+        <!-- Options for selecting the number of values to choose -->
+      </select>
+      <button onclick="displayList()">Mostrar Lista</button>
+    </div>
+
+    <div class="window" id="window3">
+      <!-- Content for displaying odd values -->
+    </div>
+
+    <div class="window" id="window4">
+      <!-- Content for displaying user info -->
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for functionality
+    // Define your functions here
+
+    // Example authenticate function
+    function authenticate() {
+      // Implement authentication logic here
+    }
+
+    // Example displayList function
+    function displayList() {
+      // Implement list display logic here
+    }
+  </script>
+</body>
+</html>
