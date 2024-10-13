@@ -15,7 +15,7 @@ body {
 header {
     display: flex;
     min-height: 70px;
-    background-color: darkred;
+    background-color: #7c7489;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
@@ -43,7 +43,7 @@ nav a {
 }
 
 nav a:hover {
-    color: white;
+    color: #f2aac7;
 }
 
 
@@ -102,17 +102,18 @@ nav a:hover {
 }
 
 .reservas button:hover {
-    background-color: crimson;
+    background-color: #f2aac7;
 }
 
 footer {
-    background-color: black;
-    color: white;
-    padding: 10px 40px;
-    width: 100%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    flex-grow: 1; 
+    height: 100cm;
 }
 
 footer a {
@@ -121,5 +122,5 @@ footer a {
 }
 
 footer a:hover {
-    color: #ffd700;
+    color: #f2aac7;
 }
