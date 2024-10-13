@@ -1,0 +1,125 @@
+/* Estilos generales para html y body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que ocupen toda la altura de la ventana */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+header {
+    display: flex;
+    min-height: 70px;
+    background-color: darkred;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+.foto {
+    flex-grow: 1; 
+}
+
+.foto img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+    display: block;
+}
+
+.reservas {
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    margin: 0;
+}
+
+.reservas h3, .reservas h4 {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.reservas form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservas label {
+    margin: 5px 0;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.reservas input {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.reservas button {
+    background-color: darkred;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.reservas button:hover {
+    background-color: crimson;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px 40px;
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffd700;
+}

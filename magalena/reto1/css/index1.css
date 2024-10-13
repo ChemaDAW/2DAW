@@ -1,0 +1,103 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    min-height: 70px;
+    background-color: darkred;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.foto img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover; 
+    margin: 0; 
+    display: block; 
+}
+
+.reservas {
+    background-color: lightgoldenrodyellow;
+    padding: 20px; 
+    margin: 0; 
+
+}
+
+.reservas h3 {
+    margin-left: 5%;
+    margin-right: 5%;}
+
+.reservas form {
+    display: flex;
+    flex-direction: column; 
+}
+
+.reservas label {
+    margin: 5px 0; 
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.reservas input {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.reservas button {
+    background-color: darkred; 
+    color: white; 
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    margin-top: 10px; 
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.reservas button:hover {
+    background-color: crimson; 
+}
+footer{
+    display: flex;
+    min-height: 70px;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+footer a{
+    color: white;
+}
