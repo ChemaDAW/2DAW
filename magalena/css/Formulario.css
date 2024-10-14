@@ -1,9 +1,17 @@
-/* Estilos generales para html y body */
+:root {
+    --color-primary: darkred;
+    --color-secondary: lightgoldenrodyellow;
+    --color-footer: black;
+    --color-hover: crimson;
+    --color-accent: #ffd700;
+    --font-family: 'Courier New', Courier, monospace;
+}
+
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Asegura que ocupen toda la altura de la ventana */
-    font-family: 'Courier New', Courier, monospace;
+    height: 100%; 
+    font-family: var(--font-family);
 }
 
 body {
@@ -15,12 +23,11 @@ body {
 header {
     display: flex;
     min-height: 70px;
-    background-color: #7c7489;
+    background-color: var(--color-primary);
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
 }
-
 
 .logo {
     display: flex;
@@ -43,12 +50,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #f2aac7;
-}
-
-
-.foto {
-    flex-grow: 1; 
+    color: white;
 }
 
 .foto img {
@@ -60,14 +62,17 @@ nav a:hover {
 }
 
 .reservas {
-    background-color: lightgoldenrodyellow;
+    background-color: var(--color-secondary);
     padding: 20px;
-    margin: 0;
+    margin: 0; 
 }
 
-.reservas h3, .reservas h4 {
-    margin-left: 5%;
-    margin-right: 5%;
+.reservas h3 {
+    margin: 5% 5% 0;
+}
+
+.reservas p {
+    margin: 5% 5%;
 }
 
 .reservas form {
@@ -76,44 +81,39 @@ nav a:hover {
 }
 
 .reservas label {
-    margin: 5px 0;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 5px 5%;
 }
 
 .reservas input {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 5% 5% 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .reservas button {
-    background-color: darkred;
+    background-color: var(--color-primary);
     color: white;
     padding: 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 10px 5%;
 }
 
 .reservas button:hover {
-    background-color: #f2aac7;
+    background-color: var(--color-hover);
 }
 
 footer {
+    background-color: var(--color-footer);
+    color: white;
+    padding: 10px 40px;
+    width: 100%; /* Asegura que el footer ocupe el ancho completo */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
-    color: white;
-    padding: 5px 20px;
-    flex-grow: 1; 
-    height: 100cm;
+    margin-top: auto;
 }
 
 footer a {
@@ -122,5 +122,17 @@ footer a {
 }
 
 footer a:hover {
-    color: #f2aac7;
+    color: var(--color-accent);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
 }

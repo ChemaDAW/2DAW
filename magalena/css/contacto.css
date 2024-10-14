@@ -1,0 +1,106 @@
+:root {
+    --color-primary: darkred;
+    --color-secondary: lightgoldenrodyellow;
+    --color-footer: black;
+    --color-hover: crimson;
+    --color-accent: #ffd700;
+    --font-family: 'Courier New', Courier, monospace;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    font-family: var(--font-family);
+}
+
+
+
+header {
+    display: flex;
+    min-height: 70px;
+    background-color: var(--color-primary);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+
+.reservas h3 {
+    margin: 5% 5% 0;
+}
+
+.reservas p {
+    margin: 5% 5%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+.reservas {
+    background-color: var(--color-secondary);
+    padding: 10px;
+    margin: 0; /* Eliminar margen */
+    flex: 1; 
+}
+
+footer {
+    background-color: var(--color-footer);
+    color: white;
+    padding: 10px 40px;
+    width: 100%; /* Asegura que el footer ocupe el ancho completo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Empujar el footer hacia abajo */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--color-accent);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+}
