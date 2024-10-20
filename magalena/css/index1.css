@@ -6,7 +6,7 @@ body {
 header {
     display: flex;
     min-height: 70px;
-    background-color: #7c7489;
+    background-color: #A494BA;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
@@ -15,16 +15,18 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    margin-left: 10%;
 }
 
 .logo img {
-    height: 50px;
+    height: 110px;
     margin-right: 10px;
 }
 
 a {
     text-decoration: none;
     color: black;
+    
 }
 
 nav a {
@@ -33,7 +35,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #f2aac7;
+    color: #976E7A;
 }
 
 .foto img {
@@ -45,10 +47,9 @@ nav a:hover {
 }
 
 .reservas {
-    background-color: lightgoldenrodyellow;
-    padding: 20px; 
+    background-color: #FAF4DF;
+    padding: 70px; 
     margin: 0; 
-
 }
 
 .reservas h3 {
@@ -71,15 +72,15 @@ nav a:hover {
     margin-right: 20%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .reservas button {
-    background-color: #7c7489; 
+    background-color: #A494BA; 
     color: white; 
     padding: 10px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer; 
     margin-top: 10px; 
     margin-left: 20%;
@@ -87,7 +88,7 @@ nav a:hover {
 }
 
 .reservas button:hover {
-    background-color: #f2aac7; 
+    background-color: #976E7A; 
 }
 footer{
     display: flex;
@@ -100,4 +101,12 @@ footer{
 
 footer a{
     color: white;
+}
+
+footer img{
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    height: 110px;
+    margin-right: 10px;
 }
