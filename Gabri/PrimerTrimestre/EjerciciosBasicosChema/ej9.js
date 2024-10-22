@@ -6,3 +6,4 @@ function ej9() {
     alert(decimalResultado);
     alert(binarioResultado);
 }
+
