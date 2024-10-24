@@ -1,3 +1,7 @@
+body{
+    Font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
+}
+
 .navbar {
     background-color: white;
     height: 80px;
@@ -69,7 +73,9 @@
         visibility: visible;
     }
 }
-
+.navbar-brand {
+    margin-left: 5%;
+}
 .hero-section {
     background: url('../img/fondo.jpg') no-repeat center;
     background-size: cover;
@@ -91,16 +97,45 @@
     height: 100vh;
     z-index: 1;
     position: relative;
+    align-items: center;
 }
 
 .hero-section h1 {
-    font-size: 1.5em;
+    font-size: 3em;
 }
 
 .hero-section h2 {
-    font-size: 1.2em;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Comienza con ancho 0 */
+    animation: escribir 5s steps(50) infinite; /* Animación para escribir */
+    display: inline-block; /* Para que no ocupe todo el ancho */
+    text-align: center;
 }
 
+.cursor {
+    border-right: 2px solid black; /* Simula el cursor */
+    height: 1.2em;
+    animation: parpadeo 1s step-end infinite; /* Cursor parpadeante */
+}
+
+
+
+@keyframes escribir {
+    0% {
+        width: 0; /* Comienza sin mostrar texto */
+    }
+    100% {
+        width: 100%; /* Al final, todo el texto es visible */
+    }
+}
+
+@keyframes parpadeo {
+    50% {
+        border-color: transparent; /* Hace que el cursor desaparezca temporalmente */
+    }
+}
 @media (max-width: 991px) {
     .navbar {
         padding: 0.5rem; 
@@ -110,12 +145,13 @@
 
     .login-button {
         font-size: 12px;
-        padding: 5px 15px; 
+        padding: 5px 15px;
+        margin-right: 5%; 
     }
 }
 footer{
-    background: linear-gradient(to bottom, black, #f18930);
-    padding-top: 50px;
+    background: linear-gradient(to bottom, #171616, white);
+    padding-top: 10px;
 }
 .container{
     width: 1140px;
@@ -128,7 +164,7 @@ footer{
 }
 h3{
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     text-align: center;
 }
 .footer-content p{
@@ -146,7 +182,7 @@ h3{
     width: auto;
     text-align: center;
     list-style-type:none;
-    padding: 7px;
+    padding: 5px;
     position: relative;
 }
 .list li::before{
