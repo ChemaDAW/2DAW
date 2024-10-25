@@ -21,7 +21,7 @@ body{
 }
 
 .login-button {
-    background-color: #c8a517;
+    background-color: #0A1828;
     color: white;
     font-size: 14px;
     padding: 8px 20px;
@@ -31,7 +31,7 @@ body{
 }
 
 .login-button:hover {
-    background-color: #9f6609;
+    background-color: #178582;
 }
 
 .navbar-toggler {
@@ -63,7 +63,7 @@ body{
         transform: translateX(-50%);
         width: 100%;
         height: 2px;
-        background-color: #9f6609;
+        background-color: #178582;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
@@ -76,7 +76,16 @@ body{
 .navbar-brand {
     margin-left: 5%;
 }
+
+@font-face {
+    font-family: 'trajan';
+    src: url('../fuente/Free\ License.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .hero-section {
+    font-family: "trajan", serif;
     background: url('../img/fondo.jpg') no-repeat center;
     background-size: cover;
     width: 100%;
@@ -101,11 +110,11 @@ body{
 }
 
 .hero-section h1 {
-    font-size: 3em;
+    font-size: 4.5em;
 }
 
 .hero-section h2 {
-    font-size: 2em;
+    font-size: 3.5em;
     white-space: nowrap;
     overflow: hidden;
     width: 0; /* Comienza con ancho 0 */
@@ -150,8 +159,9 @@ body{
     }
 }
 footer{
-    background: linear-gradient(to bottom, #171616, white);
+    background: linear-gradient(to bottom, black, black);
     padding-top: 10px;
+    margin: 0;
 }
 .container{
     width: 1140px;
@@ -161,6 +171,7 @@ footer{
 }
 .footer-content{
     width: 33.3%;
+    margin-top: 2%;
 }
 h3{
     font-size: 28px;
@@ -185,6 +196,23 @@ h3{
     padding: 5px;
     position: relative;
 }
+
+.cuerpo-medio{
+    text-align: center;
+    background-color: #0A1828;
+    margin: 0;
+    color: white;
+    padding: 20px 0;
+}
+
+.cuerpo-medio h4{
+   color: #BFA181;
+}
+
+.cuerpo-medio h2{
+   color: #178582;
+}
+
 .list li::before{
     content: '';
     position: absolute;
@@ -193,7 +221,7 @@ h3{
     top: 100%;
     width: 0;
     height: 2px;
-    background: #f18930;
+    background: #178582;
     transition-duration: .5s;
 }
 .list li:hover::before{
@@ -201,7 +229,8 @@ h3{
 }
 .social-icons{
     text-align: center;
-    padding: 0;
+    padding: 1;
+    margin-top: 20%;
 }
 .social-icons li{
     display: inline-block;
@@ -221,13 +250,13 @@ a{
     color: white;
 }
 a:hover{
-    color: #f18930;
+    color: #BFA181;
 }
 .social-icons i:hover{
-    color: #f18930;
+    color: #BFA181;
 }
 .bottom-bar{
-    background: #f18930;
+    background: #BFA181;
     text-align: center;
     padding: 10px 0;
     margin-top: 50px;
