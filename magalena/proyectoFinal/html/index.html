@@ -19,13 +19,13 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand me-auto" href="index.html"><img src="../img/fondo.jpg"
+            <a class="navbar-brand me-auto" href="index.html"><img src="../img/logo.png"
                     class="img-fluid" alt="Logo">
             </a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <img src="../img/logo.png class="img-fluid" alt="Logo">
+                    <img src="../img/logo.png" class="img-fluid" alt="Logo">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -61,7 +61,7 @@
     <section class="cuerpo-medio">
         <div class="container-fluid">
             <h4>Chema Hotel</h4>
-            <h2>UN LUGAR UNICO</h2>
+            <h2>UN LUGAR ÚNICO</h2>
             <p><br>Chema Hotel es un alojamiento ideal para los que buscan vivir y descubrir la belleza de una ciudad única.
 
             Su extraordinaria ubicación, en el centro de Granada,<br><br> la comodidad de sus habitaciones, la magnífica relación calidad-precio, la disponibilidad de dejar el vehículo resguardado y disfrutar sin preocupaciones, lo convierten en el<br><br> escenario perfecto y el lugar elegido por todos los viajeros. En el Chema Hotel, encontrarás tu hogar.
@@ -69,12 +69,69 @@
             Descubre la magia de El Ejido con nosotros, ¡déjate embargar por su esencia!</p>
         </div>
     </section>
-    <section class="cuerpo-medio2">
-        <div class="container-fluid">
-            <p>hola</p>
-            <br><br><br><br><br><br><br><br><br><br><br>
+   
+    <div class="container-fluid main-container" >
+        <div class="row">
+            <!-- Columna izquierda con el título y la descripción -->
+            <div class="col-md-6 left-content p-5">
+                <h2>Suscríbete a nuestro Newsletter</h2>
+                <p>Recibe las últimas novedades, ofertas especiales y contenido exclusivo directamente en tu correo electrónico. Únete a nuestra comunidad y mantente siempre informado.</p>
+            </div>
+            <!-- Columna derecha con el formulario -->
+            <div class="col-md-6 p-5">
+                <form>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-user"></i></i></span>
+                        <input type="text" class="form-control" id="text" placeholder="nombre" required>
+                    </div>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                    </div>
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="consentimiento" required>
+                        <label class="form-check-label" for="consentimiento">Acepto los términos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Suscribirse</button>
+                    <div class="form-text text-center mt-3">
+                        No compartimos tu información con terceros.
+                    </div>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+    <div class="container-fluid secon-container">
+        <h2 class="text-center mb-4">Reseñas de Usuarios</h2> <!-- Título en la parte superior -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Usuario 1</h5>
+                        <p class="card-text">"Excelente producto, muy satisfecho con mi compra. Lo recomendaría a todos!"</p>
+                        <p class="card-text"><small class="text-muted">Fecha: 25 de octubre, 2024</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Usuario 2</h5>
+                        <p class="card-text">"El servicio al cliente fue increíble. Definitivamente volveré a comprar aquí."</p>
+                        <p class="card-text"><small class="text-muted">Fecha: 24 de octubre, 2024</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card review-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Usuario 3</h5>
+                        <p class="card-text">"Calidad excepcional y envío rápido. Estoy muy contento con mi compra."</p>
+                        <p class="card-text"><small class="text-muted">Fecha: 23 de octubre, 2024</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="container">
             <div class="footer-content">

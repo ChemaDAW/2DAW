@@ -54,6 +54,62 @@ body{
     color: black;
 }
 
+.main-container {
+    width: 100%;
+    padding: 50px;
+    background: linear-gradient(135deg, white, white);
+    color: black;
+}
+
+.secon-container{
+    width: 100%;
+    padding: 50px;
+    background: #0A1828;
+    color: black;
+}
+/* Estilo del título */
+.left-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #BFA181;
+}
+.left-content p {
+    font-size: 18px;
+    color: black;
+}
+/* Estilo del formulario */
+.btn-custom {
+    background-color: #BFA181;
+    color: #343a40;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+}
+.btn-custom:hover {
+    background-color: #0A1828;
+    color: white;
+}
+/* Estilos del campo de texto */
+.form-control {
+    background-color: #f8f9fa;
+    color: #BFA181;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 2px solid #333;
+}
+.form-control:focus {
+    border-color: #BFA181;
+    box-shadow: 0 0 5px rgba(255, 183, 3, 0.5);
+}
+.input-group-text {
+    background-color:  #178582;
+    color: #0A1828;
+    border: none;
+}
+/* Estilo del texto de términos */
+.form-check-label, .form-text {
+    color: black;
+}
 @media(min-width: 991px) {
     .nav-link:before {
         content: "";
@@ -75,6 +131,39 @@ body{
 }
 .navbar-brand {
     margin-left: 5%;
+}
+
+.review-container {
+    background-color: #178582; /* Color de fondo del contenedor */
+    padding: 20px;             /* Espaciado interno */
+    border-radius: 10px;       /* Bordes redondeados */
+}
+
+.review-card {
+    border: 1px solid #e0e0e0; /* Borde ligero */
+    border-radius: 10px;       /* Bordes redondeados */
+    transition: transform 0.3s; /* Transición suave al hover */
+    padding: 15px;
+    margin-bottom: 20px;       /* Espacio entre tarjetas */
+    background-color: white;   /* Color de fondo blanco para las tarjetas */
+}
+
+.review-card:hover {
+    transform: scale(1.05);    /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.secon-container h2{
+    color: #BFA181;
+}
+
+.card-title {
+    font-weight: bold;         /* Título en negrita */
+    color: #178582;               /* Color del título */
+}
+
+.card-text {
+    color: #555;               /* Color del texto de la reseña */
 }
 
 @font-face {
