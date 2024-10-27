@@ -12,6 +12,5 @@
         echo "Usuario: $usuario\n";
         echo "Dominio: $dominio";
     ?>
-
 </body>
 </html>
