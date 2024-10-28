@@ -216,43 +216,61 @@ body{
     position: relative;
     align-items: center;
 }
-
-.hero-section h1 {
-    font-size: 3.5em;
+/* Estilos de la sección de login */
+.login-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo opcional */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 900px;
+    margin: 50px auto;
 }
 
-.hero-section h2 {
-    font-size: 2.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0; /* Comienza con ancho 0 */
-    animation: escribir 5s steps(50) infinite; /* Animación para escribir */
-    display: inline-block; /* Para que no ocupe todo el ancho */
-    text-align: center;
+.login-title {
+    color: #BFA181; /* Cambia el color según el diseño */
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: -0.5rem;
 }
 
-.cursor {
-    border-right: 2px solid black; /* Simula el cursor */
-    height: 1.2em;
-    animation: parpadeo 1s step-end infinite; /* Cursor parpadeante */
+.login-form .form-control {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding:10px;
 }
 
-
-
-@keyframes escribir {
-    0% {
-        width: 0; /* Comienza sin mostrar texto */
-    }
-    100% {
-        width: 100%; /* Al final, todo el texto es visible */
-    }
+.btn-login {
+    background-color: #BFA181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 100%;
 }
 
-@keyframes parpadeo {
-    50% {
-        border-color: transparent; /* Hace que el cursor desaparezca temporalmente */
-    }
+.form-label{
+    color:#178582;
+    font-size: 15px;
 }
+
+.btn-login:hover {
+    background-color: #178582;
+}
+
+.form-text a {
+    color: #BFA181;
+    text-decoration: none;
+}
+
+.form-text a:hover {
+    color: #178582;
+    text-decoration: underline;
+}
+
 @media (max-width: 991px) {
     .navbar {
         padding: 0.5rem; 
