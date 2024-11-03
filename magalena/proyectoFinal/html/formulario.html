@@ -32,7 +32,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Habitaciones</a>
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="habitaciones.html">Habitaciones</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-lg-2" href="#">Servicios</a>
@@ -67,6 +67,21 @@
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" id="password" placeholder="Escribe tu contraseña" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="disabledSelect" class="form-label">Sexo</label>
+                        <select id="disabledSelect" class="form-select">
+                          <option>Hombre</option>
+                          <option>Mujer</option>
+                          <option>Prefiero no decirlo</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">City</label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
                     <button type="submit" class="btn btn-login">Entrar</button>
                     <div class="form-text text-center mt-3">
                         ¿No tienes una cuenta? <a href="#">Regístrate</a>
@@ -86,7 +101,7 @@
             <div class="footer-content">
                 <ul class="list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="">Habitaciones</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a></li>
                     <li><a href="">Servicios</a></li>
                     <li><a href="">Como Llegar</a></li>
                     <li><a href="">Contacto</a></li>
