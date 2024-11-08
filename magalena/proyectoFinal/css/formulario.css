@@ -315,12 +315,20 @@ h3{
 .list{
     padding: 0;
 }
+
+
 .list li{
     width: auto;
     text-align: center;
     list-style-type:none;
     padding: 5px;
     position: relative;
+}
+
+#formularioCiudad{
+    margin: 0;
+    padding: 0%;
+    border: 0;
 }
 
 .cuerpo-medio{

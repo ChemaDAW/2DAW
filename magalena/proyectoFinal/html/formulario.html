@@ -56,9 +56,9 @@
     <section class="hero-section">
         <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
             <div class="login-section">
-                <h2 class="login-title">Iniciar Sesión</h2>
+                <h2 class="login-title">Registrarse</h2>
                 
-                <form class="login-form">
+                <form class="login-form" id="registrationForm">
                     <div class="mb-0">
                         <label for="email" class="form-label">Correo Electrónico</label>
                         <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
@@ -67,28 +67,25 @@
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" id="password" placeholder="Escribe tu contraseña" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 mt-0 mb-0">
                         <label for="disabledSelect" class="form-label">Sexo</label>
-                        <select id="disabledSelect" class="form-select">
+                        <select id="disabledSelect" class="form-select mb-0">
+                            <option></option>
                           <option>Hombre</option>
                           <option>Mujer</option>
                           <option>Prefiero no decirlo</option>
                         </select>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">City</label>
+                    </div>
+                    <div class="col-md-12 mb-0  align-items-center" id="formularioCiudad">
+                        <label for="validationCustom03" class="form-label me-2 mb-0">Ciudad</label>
                         <input type="text" class="form-control" id="validationCustom03" required>
-                        <div class="invalid-feedback">
-                          Please provide a valid city.
-                        </div>
-                      </div>
-                    <button type="submit" class="btn btn-login">Entrar</button>
-                    <div class="form-text text-center mt-3">
-                        ¿No tienes una cuenta? <a href="#">Regístrate</a>
+                    </div>                                                 
+                    <button type="submit" class="btn btn-login" id="submitButton">Entrar</button>
+                    <div class="form-text text-center mt-1">
+                        ¿Tienes una cuenta? <a href="#">Entrar</a>
                     </div>
                 </form>
-            </div>
-                  
+            </div>     
         </div>
     </section>
     <footer>
