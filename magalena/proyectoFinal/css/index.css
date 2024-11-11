@@ -176,62 +176,50 @@ body {
     margin-left: 5%;
 }
 
-.cover {
+
+#reservation-container {
     display: flex;
-    text-align: center;
+    justify-content: center;
     align-items: center;
-    width: 100%; /* Ocupa el ancho completo de la página */
-    padding: 0px; /* Agrega algo de margen si lo necesitas */
-}
+    width: 100%;
+    height: 5em;
+    padding: 0;
+    margin: 0px;
+  }
 
-.flex-form {
-    color:#178582;
-    display: flex;
-    width: 100%; /* Hace que el formulario ocupe todo el ancho */
-}
+  #reservation-card {
+    align-items: center;
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 2rem;
+  }
 
-.flex-form > * {
-    color: #BFA181;
-    border: 0;
-    padding: 10px;
-    background: white;
-    line-height: 50px;
-    font-size: 20px;
-    border-radius: 0;
-    outline: 0;
-    flex: 1; /* Para que cada elemento del formulario ocupe un espacio igual */
-}
+  .form-label {
+    color:#BFA181;
+    font-weight: 500;
+  }
 
-.flex-form label,select{
-    color: #178582;
-}
+  .form-control, .form-select {
+    border-radius: 0px;
+    color:#178582
+  }
 
-.flex-form select{
-    color: #178582;
-}
+  #submit-button {
+    background-color:#BFA181;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0px;
+    transition: background-color 0.3s;
+  }
 
-.flex-form option{
-    color: #BFA181;
-}
-
-.flex-form > *:last-child {
-    border-right: 0;
-}
-
-input[type='submit'] {
-    flex: 1;
-    background: #BFA181;
-    border-top: 1px solid #0A1828;
-    border-bottom: 1px solid #0A1828;
-    color: #0A1828;
-}
-
-input[type='submit']:hover {
-    background:#178582;
-    color:white;
-}
-
-
+  #submit-button:hover {
+    background-color:#0A1828;
+    color: white;
+  }
 @media (max-width: 767px) {
 
     /* Ajustes de la barra de navegación */
@@ -575,12 +563,21 @@ h3 {
     padding: 20px 0;
 }
 
-.cuerpo-medio h4 {
+.cuerpo-medio h3 {
     color: #BFA181;
 }
 
-.cuerpo-medio h2 {
+.cuerpo-medio h1 {
     color: #178582;
+}
+
+.cuerpo-medio p{
+    line-height: 13px;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%; /* Ajusta el ancho del párrafo */
 }
 
 .list li::before {

@@ -32,7 +32,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2 active" aria-current="page"
+                            <a class="nav-link mx-lg-2 " aria-current="page"
                                 href="habitaciones.html">Habitaciones</a>
                         </li>
                         <li class="nav-item">
@@ -60,35 +60,52 @@
             <h2>El Ejido</h2>
         </div>
     </section>
-    <div class="cover">
-
-        <form class="flex-form">
 
 
+  
 
-            <label for="from">Desde</label>
-            <input type="date" name="from">
-
-            <label for="from">Hasta</label>
-            <input type="date" name="to">
-
-            <select name="" id="selecionPersonas">
-                <option value="1">1 Persona</option>
-                <option value="2">2 Persona</option>
-                <option value="3">3 Persona</option>
-                <option value="4">4 Persona</option>
-                <option value="5">5 Persona</option>
-            </select>
-
-            <input type="submit" value="Reservar">
-
-        </form>
-
-    </div>
+    <div id="reservation-container" class="container-fluid">
+        <div id="reservation-card" class="card">
+          <form>
+            <div class="row g-3 align-items-center">
+              <!-- Fecha de Entrada -->
+              <div class="col-md-2">
+                <input type="date" class="form-control" id="input-checkin-date" required>
+              </div>
+      
+              <!-- Fecha de Salida -->
+              <div class="col-md-2">
+                <input type="date" class="form-control" id="input-checkout-date" required>
+              </div>
+      
+              <!-- Número de Huéspedes -->
+              <div class="col-md-3">
+                <select id="select-guests" class="form-select" required>
+                  <option value="1">1 Huésped</option>
+                  <option value="2">2 Huéspedes</option>
+                  <option value="3">3 Huéspedes</option>
+                  <option value="4">4 Huéspedes</option>
+                  <option value="5">5 Huéspedes</option>
+                </select>
+              </div>
+      
+              <!-- Código de Descuento -->
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="input-discount-code" placeholder="Ingresa tu código aquí">
+              </div>
+              <div class="col-md-2">
+                <button id="submit-button" type="submit" class="btn btn-primary">Reservar</button>
+              </div>
+            </div>
+      
+            
+          </form>
+        </div>
+      </div>
     <section class="cuerpo-medio">
         <div class="container-fluid">
-            <h4>Chema Hotel</h4>
-            <h2>UN LUGAR ÚNICO</h2>
+            <h3>Un Lugar Único</h4>
+            <h1>CHEMA HOTEL</h2>
             <p><br>Chema Hotel es un alojamiento ideal para los que buscan vivir y descubrir la belleza de una ciudad
                 única.
 
