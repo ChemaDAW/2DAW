@@ -176,7 +176,64 @@ body {
     margin-left: 5%;
 }
 
+.cover {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 100%; /* Ocupa el ancho completo de la página */
+    padding: 0px; /* Agrega algo de margen si lo necesitas */
+}
+
+.flex-form {
+    color:#178582;
+    display: flex;
+    width: 100%; /* Hace que el formulario ocupe todo el ancho */
+}
+
+.flex-form > * {
+    color: #BFA181;
+    border: 0;
+    padding: 10px;
+    background: white;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 0;
+    outline: 0;
+    flex: 1; /* Para que cada elemento del formulario ocupe un espacio igual */
+}
+
+.flex-form label,select{
+    color: #178582;
+}
+
+.flex-form select{
+    color: #178582;
+}
+
+.flex-form option{
+    color: #BFA181;
+}
+
+.flex-form > *:last-child {
+    border-right: 0;
+}
+
+input[type='submit'] {
+    flex: 1;
+    background: #BFA181;
+    border-top: 1px solid #0A1828;
+    border-bottom: 1px solid #0A1828;
+    color: #0A1828;
+}
+
+input[type='submit']:hover {
+    background:#178582;
+    color:white;
+}
+
+
 @media (max-width: 767px) {
+
     /* Ajustes de la barra de navegación */
     .navbar {
         padding: 0.5rem;
@@ -185,9 +242,11 @@ body {
         flex-direction: column;
         align-items: center;
         border-radius: 10px;
-        width: 100vw; /* Ocupa todo el ancho de la pantalla */
+        width: 100vw;
+        /* Ocupa todo el ancho de la pantalla */
         box-sizing: border-box;
-        margin: 0; /* Elimina margen */
+        margin: 0;
+        /* Elimina margen */
     }
 
     .navbar-brand {
@@ -204,7 +263,8 @@ body {
 
     .navbar-toggler {
         font-size: 1.5rem;
-        align-self: flex-end; /* Botón alineado a la derecha */
+        align-self: flex-end;
+        /* Botón alineado a la derecha */
     }
 
     .nav-link {
@@ -225,11 +285,13 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Ocupa la altura completa de la pantalla */
+        height: 100vh;
+        /* Ocupa la altura completa de la pantalla */
         text-align: center;
         background-size: cover;
         background-position: center;
-        width: 100vw; /* Ocupa todo el ancho de la pantalla */
+        width: 100vw;
+        /* Ocupa todo el ancho de la pantalla */
         position: relative;
         box-sizing: border-box;
         padding: 20px;
@@ -248,9 +310,11 @@ body {
     }
 
     /* Ajustes de los contenedores */
-    .main-container, .secon-container {
+    .main-container,
+    .secon-container {
         padding: 20px;
-        width: 100vw; /* Ocupa todo el ancho de la pantalla */
+        width: 100vw;
+        /* Ocupa todo el ancho de la pantalla */
         box-sizing: border-box;
     }
 
@@ -267,7 +331,8 @@ body {
         font-size: 14px;
     }
 
-    .form-control, .input-group-text {
+    .form-control,
+    .input-group-text {
         font-size: 14px;
     }
 
@@ -303,7 +368,9 @@ body {
         margin-top: 10px;
     }
 
-    .footer-content p, .footer-content ul, .social-icons {
+    .footer-content p,
+    .footer-content ul,
+    .social-icons {
         text-align: center;
     }
 
