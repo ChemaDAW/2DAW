@@ -45,6 +45,7 @@ body{
     padding: 8px 20px;
     border-radius: 50px;
     text-decoration: none;
+    max-width: 50%;
     transition: 0.3s background-color;
 }
 
@@ -97,18 +98,32 @@ body{
 }
 /* Estilo del formulario */
 .btn-custom {
+    max-width: 50%;
     background-color: #BFA181;
     color: #343a40;
     font-weight: bold;
-    width: 100%;
     border: none;
 }
+
+#submitButton{
+    background-color:#BFA181;
+    color: black;
+}
+
+#submitButton:hover{
+    background-color: #0A1828;
+    color: white;
+}
+
 .btn-custom:hover {
     background-color: #0A1828;
     color: white;
 }
+
+
 /* Estilos del campo de texto */
 .form-control {
+    font-size: 15px;
     background-color: #f8f9fa;
     color: #BFA181;
     border: none;
@@ -194,14 +209,14 @@ body{
 
 .hero-section {
     font-family: "trajan", serif;
-    background: url('../img/fondo.jpg') no-repeat center;
+    background: url('../img/alambra.jpg') no-repeat center;
     background-size: cover;
     width: 100%;
     position: relative;
 }
 
 .hero-section::before {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     content: "";
     position: absolute;
     top: 0;
@@ -231,10 +246,16 @@ body{
 .login-title {
     color: #BFA181; /* Cambia el color según el diseño */
     font-size: 32px;
+    text-align: left;
     font-weight: bold;
     margin-bottom: -0.5rem;
 }
 
+hr{
+    background:#BFA181;
+   background: linear-gradient(to right,#178582,#0A1828 , #BFA181);
+   height: 10px; /* Altura de la línea */
+}
 .login-form .form-control {
     background-color: #ffffff;
     border: 1px solid #ced4da;
@@ -254,14 +275,23 @@ body{
 
 .form-label{
     color:#178582;
+    font-weight: bold;
     font-size: 15px;
 }
 
 .btn-login:hover {
     background-color: #178582;
+    color: black;
+}
+
+.form-text{
+    text-align: left;
+    font-size: 20px;
 }
 
 .form-text a {
+    text-align: left;
+    font-size: 20px;
     color: #BFA181;
     text-decoration: none;
 }

@@ -1,0 +1,123 @@
+/* Estilos para el cuerpo de la página */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Fondo más suave */
+}
+
+/* Contenedor del formulario centrado */
+.form-container {
+    box-shadow: 20,20,20,20;
+    border-radius: 20px;
+    display: flex;
+    height: 100vh; /* Altura completa de la ventana */
+    background-color: #f0f0f0; /* Fondo sutil */
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* Estilos del formulario */
+.form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más suave y amplia */
+    width: 100%;
+    max-width: 380px; /* Máximo ancho */
+    text-align: center;
+}
+/* Aseguramos que el título esté alineado a la izquierda con el formulario */
+#tituloForm {
+    text-align: left !important; /* Alinea el título a la izquierda */
+    margin-bottom: 10px; /* Ajusta el espacio entre el título y el párrafo */
+    color: #333;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 0; /* Eliminar margen izquierdo adicional */
+}
+
+/* Párrafo centrado */
+#parrafoForm {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px; /* Ajusta el espacio después del párrafo */
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}
+
+* Estilo para el enlace dentro de #olvidarPassword */
+#olvidarPassword a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del contenedor */
+}
+
+#olvidarPassword a:hover {
+    text-decoration: underline; /* Agrega subrayado al pasar el mouse, si lo deseas */
+}
+
+/* Restante de los estilos de #olvidarPassword */
+#divOlvidarPassword {
+    text-align: left !important;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 0 !important;
+    color: purple;
+}
+
+#olvidarPassword{
+    text-align: left !important;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 0 !important;
+    color: purple;
+    text-decoration: none;
+}
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 12px; /* Espaciado más grande */
+    margin-bottom: 20px; /* Más espacio entre campos */
+    border: 1px solid #ccc; /* Borde más claro */
+    border-radius: 6px; /* Bordes más redondeados */
+    font-size: 14px;
+    background-color: #f9f9f9; /* Fondo más suave en los campos */
+    transition: border-color 0.3s ease; /* Transición para el cambio de borde */
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: #4CAF50; /* Cambio de borde al enfocar */
+    outline: none;
+    background-color: #fff; /* Fondo blanco cuando se enfoca */
+}
+
+/* Estilo para el botón */
+.btn-custom {
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+    width: 75%;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #0A1828;
+    color: white;
+}
+
+.form .form-check-label {
+    font-size: 14px;
+    color: #555;
+}
+
+.form .form-check-input:checked {
+    background-color: purple; /* Estilo cuando se marca */
+    border-color: purple;
+}

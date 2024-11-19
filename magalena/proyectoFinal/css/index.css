@@ -4,6 +4,15 @@ body {
     padding: 0;
 }
 
+a{
+    color: green;
+}
+a:hover{
+    color: #178582;
+}
+
+
+
 .navbar {
     background-color: white;
     height: 80px;
@@ -116,7 +125,7 @@ body {
     background-color: #BFA181;
     color: #343a40;
     font-weight: bold;
-    width: 100%;
+    width: 75%;
     border: none;
 }
 
@@ -127,6 +136,7 @@ body {
 
 /* Estilos del campo de texto */
 .form-control {
+    max-width: 70%;
     background-color: #f8f9fa;
     color: #BFA181;
     border: none;
@@ -143,7 +153,6 @@ body {
     background-color: #178582;
     color: #0A1828;
     border: none;
-
 }
 
 .form-check-label,
@@ -286,16 +295,6 @@ body {
         margin: 0;
     }
 
-    .hero-section h1 {
-        font-size: 2.5em;
-        margin-bottom: 0.5em;
-    }
-
-    .hero-section h2 {
-        font-size: 1.5em;
-        white-space: normal;
-        width: 100%;
-    }
 
     /* Ajustes de los contenedores */
     .main-container,
@@ -569,16 +568,21 @@ h3 {
 
 .cuerpo-medio h1 {
     color: #178582;
+    margin: 0;
+    padding: 0;
 }
 
 .cuerpo-medio p{
-    line-height: 13px;
+    font-size: 17px;
+    padding: 0;
+    line-height: 25px;
     text-align: justify;
-    display: flex;
+    display:flex;
     justify-content: center;
     margin: 0 auto;
-    width: 80%; /* Ajusta el ancho del párrafo */
+    width: 65%; /* Ajusta el ancho del párrafo */
 }
+
 
 .list li::before {
     content: '';
