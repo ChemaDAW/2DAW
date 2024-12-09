@@ -1,17 +1,28 @@
-body{
-    Font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
+body {
+    font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
+    margin: 0;
+    padding: 0;
 }
+
+a{
+    color: green;
+}
+a:hover{
+    color: #178582;
+}
+
+
 
 .navbar {
     background-color: white;
     height: 80px;
     margin: 10px;
-    padding: 1rem; 
+    padding: 1rem;
     border-radius: 16px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar li{
+.navbar li {
     margin-left: 0.5cm;
 }
 
@@ -21,20 +32,29 @@ body{
 }
 
 #boton-habitaciones {
-    background-color:#BFA181; /* Cambia el color de fondo */
-    color: #fff; /* Cambia el color del texto */
-    font-size: 16px; /* Ajusta el tamaño de la fuente */
-    font-weight: bold; /* Aplica negrita */
-    border-radius: 10px; /* Bordes redondeados */
-    border: none; /* Quita el borde */
-    padding: 12px 24px; /* Añade espacio dentro del botón */
-    transition: background-color 0.3s ease; /* Añade una transición */
+    background-color: #BFA181;
+    /* Cambia el color de fondo */
+    color: #fff;
+    /* Cambia el color del texto */
+    font-size: 16px;
+    /* Ajusta el tamaño de la fuente */
+    font-weight: bold;
+    /* Aplica negrita */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    border: none;
+    /* Quita el borde */
+    padding: 12px 24px;
+    /* Añade espacio dentro del botón */
+    transition: background-color 0.3s ease;
+    /* Añade una transición */
     margin-top: 3rem;
 }
 
 #boton-habitaciones:hover {
-    background-color:#178582;
-    color: #0A1828; /* Cambia el color de fondo al pasar el cursor */
+    background-color: #178582;
+    color: #0A1828;
+    /* Cambia el color de fondo al pasar el cursor */
 }
 
 
@@ -57,7 +77,8 @@ body{
     font-size: 1.25cm;
 }
 
-.navbar-toggler:focus, .btn-close:focus {
+.navbar-toggler:focus,
+.btn-close:focus {
     box-shadow: none;
     outline: none;
 }
@@ -68,7 +89,8 @@ body{
     position: relative;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: black;
 }
 
@@ -79,53 +101,62 @@ body{
     color: black;
 }
 
-.secon-container{
+.secon-container {
     width: 100%;
     padding: 50px;
     background: #0A1828;
     color: black;
 }
+
 /* Estilo del título */
 .left-content h2 {
     font-size: 36px;
     font-weight: bold;
     color: #BFA181;
 }
+
 .left-content p {
     font-size: 18px;
     color: black;
 }
+
 /* Estilo del formulario */
 .btn-custom {
     background-color: #BFA181;
     color: #343a40;
     font-weight: bold;
-    width: 100%;
+    width: 75%;
     border: none;
 }
+
 .btn-custom:hover {
     background-color: #0A1828;
     color: white;
 }
+
 /* Estilos del campo de texto */
 .form-control {
+    max-width: 70%;
     background-color: #f8f9fa;
     color: #BFA181;
     border: none;
     border-radius: 10px;
     border-bottom: 2px solid #333;
 }
+
 .form-control:focus {
     border-color: #BFA181;
     box-shadow: 0 0 5px rgba(255, 183, 3, 0.5);
 }
+
 .input-group-text {
-    background-color:  #178582;
+    background-color: #178582;
     color: #0A1828;
     border: none;
-
 }
-.form-check-label, .form-text {
+
+.form-check-label,
+.form-text {
     color: black;
 }
 
@@ -143,46 +174,246 @@ body{
         transition: 0.3s ease-in-out;
     }
 
-    .nav-link:hover::before, .nav-link.active::before {
+    .nav-link:hover::before,
+    .nav-link.active::before {
         width: 100%;
         visibility: visible;
     }
 }
+
 .navbar-brand {
     margin-left: 5%;
 }
 
+
+#reservation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5em;
+    padding: 0;
+    margin: 0px;
+  }
+
+  #reservation-card {
+    align-items: center;
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 2rem;
+  }
+
+  .form-label {
+    color:#BFA181;
+    font-weight: 500;
+  }
+
+  .form-control, .form-select {
+    border-radius: 0px;
+    color:#178582
+  }
+
+  #submit-button {
+    background-color:#BFA181;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0px;
+    transition: background-color 0.3s;
+  }
+
+  #submit-button:hover {
+    background-color:#0A1828;
+    color: white;
+  }
+@media (max-width: 767px) {
+
+    /* Ajustes de la barra de navegación */
+    .navbar {
+        padding: 0.5rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        width: 100vw;
+        /* Ocupa todo el ancho de la pantalla */
+        box-sizing: border-box;
+        margin: 0;
+        /* Elimina margen */
+    }
+
+    .navbar-brand {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-brand img {
+        width: 80px;
+        height: auto;
+    }
+
+    .navbar-toggler {
+        font-size: 1.5rem;
+        align-self: flex-end;
+        /* Botón alineado a la derecha */
+    }
+
+    .nav-link {
+        font-size: 14px;
+        margin: 0 5px;
+        text-align: center;
+    }
+
+    .login-button {
+        font-size: 14px;
+        padding: 6px 15px;
+        margin-top: 10px;
+    }
+
+    /* Ajustes para el Hero Section */
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* Ocupa la altura completa de la pantalla */
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        /* Ocupa todo el ancho de la pantalla */
+        position: relative;
+        box-sizing: border-box;
+        padding: 20px;
+        margin: 0;
+    }
+
+
+    /* Ajustes de los contenedores */
+    .main-container,
+    .secon-container {
+        padding: 20px;
+        width: 100vw;
+        /* Ocupa todo el ancho de la pantalla */
+        box-sizing: border-box;
+    }
+
+    .left-content h2 {
+        font-size: 24px;
+    }
+
+    .left-content p {
+        font-size: 16px;
+    }
+
+    /* Ajustes del formulario */
+    .btn-custom {
+        font-size: 14px;
+    }
+
+    .form-control,
+    .input-group-text {
+        font-size: 14px;
+    }
+
+    /* Ajustes en las tarjetas de reseña */
+    .review-card {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .review-card .card-title {
+        font-size: 16px;
+    }
+
+    .review-card .card-text {
+        font-size: 14px;
+    }
+
+    #boton-habitaciones {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Ajustes para el pie de página */
+    footer .container {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    .footer-content {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .footer-content p,
+    .footer-content ul,
+    .social-icons {
+        text-align: center;
+    }
+
+    .social-icons li {
+        margin: 0 5px;
+    }
+
+    .bottom-bar p {
+        font-size: 14px;
+    }
+}
+
 .review-container {
-    background-color: #178582; /* Color de fondo del contenedor */
-    padding: 20px;             /* Espaciado interno */
-    border-radius: 10px;       /* Bordes redondeados */
+    background-color: #178582;
+    /* Color de fondo del contenedor */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
 }
 
 .review-card {
-    border: 1px solid #e0e0e0; /* Borde ligero */
-    border-radius: 10px;       /* Bordes redondeados */
-    transition: transform 0.3s; /* Transición suave al hover */
+    border: 1px solid #e0e0e0;
+    /* Borde ligero */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    transition: transform 0.3s;
+    /* Transición suave al hover */
     padding: 15px;
-    margin-bottom: 20px;       /* Espacio entre tarjetas */
-    background-color: white;   /* Color de fondo blanco para las tarjetas */
+    margin-bottom: 20px;
+    /* Espacio entre tarjetas */
+    background-color: white;
+    /* Color de fondo blanco para las tarjetas */
 }
 
 .review-card:hover {
-    transform: scale(1.05);    /* Aumenta el tamaño al pasar el mouse */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transform: scale(1.05);
+    /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
 }
 
-.secon-container h2{
+.secon-container h2 {
     color: #BFA181;
 }
 
 .card-title {
-    font-weight: bold;         /* Título en negrita */
-    color: #178582;               /* Color del título */
+    font-weight: bold;
+    /* Título en negrita */
+    color: #178582;
+    /* Color del título */
 }
 
 .card-text {
-    color: #555;               /* Color del texto de la reseña */
+    color: #555;
+    /* Color del texto de la reseña */
 }
 
 @font-face {
@@ -225,87 +456,105 @@ body{
     font-size: 2.5em;
     white-space: nowrap;
     overflow: hidden;
-    width: 0; /* Comienza con ancho 0 */
-    animation: escribir 5s steps(50) infinite; /* Animación para escribir */
-    display: inline-block; /* Para que no ocupe todo el ancho */
+    width: 0;
+    /* Comienza con ancho 0 */
+    animation: escribir 5s steps(50) infinite;
+    /* Animación para escribir */
+    display: inline-block;
+    /* Para que no ocupe todo el ancho */
     text-align: center;
 }
 
 .cursor {
-    border-right: 2px solid black; /* Simula el cursor */
+    border-right: 2px solid black;
+    /* Simula el cursor */
     height: 1.2em;
-    animation: parpadeo 1s step-end infinite; /* Cursor parpadeante */
+    animation: parpadeo 1s step-end infinite;
+    /* Cursor parpadeante */
 }
 
 
 
 @keyframes escribir {
     0% {
-        width: 0; /* Comienza sin mostrar texto */
+        width: 0;
+        /* Comienza sin mostrar texto */
     }
+
     100% {
-        width: 100%; /* Al final, todo el texto es visible */
+        width: 100%;
+        /* Al final, todo el texto es visible */
     }
 }
 
 @keyframes parpadeo {
     50% {
-        border-color: transparent; /* Hace que el cursor desaparezca temporalmente */
+        border-color: transparent;
+        /* Hace que el cursor desaparezca temporalmente */
     }
 }
+
 @media (max-width: 991px) {
     .navbar {
-        padding: 0.5rem; 
-        height: auto; 
-        border-radius: 16px; 
+        padding: 0.5rem;
+        height: auto;
+        border-radius: 16px;
     }
 
     .login-button {
         font-size: 12px;
         padding: 5px 15px;
-        margin-right: 5%; 
+        margin-right: 5%;
     }
 }
-footer{
+
+footer {
     background: linear-gradient(to bottom, black, black);
     padding-top: 10px;
     margin: 0;
 }
-.container{
+
+.container {
     width: 1140px;
     margin: auto;
     display: flex;
     justify-content: center;
 }
-.footer-content{
+
+.footer-content {
     width: 33.3%;
     margin-top: 2%;
 }
-h3{
+
+h3 {
     font-size: 28px;
     margin-bottom: 5px;
     text-align: center;
 }
-.footer-content p{
-    width:190px;
+
+.footer-content p {
+    width: 190px;
     margin: auto;
     padding: 7px;
 }
-.footer-content ul{
+
+.footer-content ul {
     text-align: center;
 }
-.list{
+
+.list {
     padding: 0;
 }
-.list li{
+
+.list li {
     width: auto;
     text-align: center;
-    list-style-type:none;
+    list-style-type: none;
     padding: 5px;
     position: relative;
 }
 
-.cuerpo-medio{
+.cuerpo-medio {
     text-align: center;
     background-color: #0A1828;
     margin: 0;
@@ -313,18 +562,32 @@ h3{
     padding: 20px 0;
 }
 
-.cuerpo-medio h4{
-   color: #BFA181;
+.cuerpo-medio h3 {
+    color: #BFA181;
 }
 
-.cuerpo-medio h2{
-   color: #178582;
+.cuerpo-medio h1 {
+    color: #178582;
+    margin: 0;
+    padding: 0;
 }
 
-.list li::before{
+.cuerpo-medio p{
+    font-size: 17px;
+    padding: 0;
+    line-height: 25px;
+    text-align: justify;
+    display:flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 65%; /* Ajusta el ancho del párrafo */
+}
+
+
+.list li::before {
     content: '';
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
     top: 100%;
     width: 0;
@@ -332,44 +595,53 @@ h3{
     background: #178582;
     transition-duration: .5s;
 }
-.list li:hover::before{
+
+.list li:hover::before {
     width: 70px;
 }
-.social-icons{
+
+.social-icons {
     text-align: center;
     padding: 1;
     margin-top: 20%;
 }
-.social-icons li{
+
+.social-icons li {
     display: inline-block;
     text-align: center;
     padding: 5px;
 }
-.social-icons i{
+
+.social-icons i {
     color: white;
     font-size: 25px;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
 
-.footer-content p{
+.footer-content p {
     color: white;
 }
-a:hover{
+
+a:hover {
     color: #BFA181;
 }
-.social-icons i:hover{
+
+.social-icons i:hover {
     color: #BFA181;
 }
-.bottom-bar{
+
+.bottom-bar {
     background: #BFA181;
     text-align: center;
     padding: 10px 0;
     margin-top: 50px;
 }
-.bottom-bar p{
+
+.bottom-bar p {
     color: white;
     margin: 0;
     font-size: 16px;
