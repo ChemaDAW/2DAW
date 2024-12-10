@@ -1,4 +1,5 @@
 body {
+    /*Font-Family*/
     font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
     margin: 0;
     padding: 0;
@@ -27,7 +28,7 @@ a:hover{
 }
 
 .img-fluid {
-    width: 100px;
+    width: 75px;
     height: auto;
 }
 
@@ -58,18 +59,29 @@ a:hover{
 }
 
 
+
+#enlaceTerminos{
+    color: black;
+    text-decoration: underline
+}
+
+#enlaceTerminos:hover{
+    color: #178582;
+}
 .login-button {
-    background-color: #0A1828;
+    background-color: #178582;
     color: white;
     font-size: 18px;
     padding: 8px 20px;
     border-radius: 50px;
     text-decoration: none;
+    z-index: 2;
     transition: 0.3s background-color;
+   
 }
 
 .login-button:hover {
-    background-color: #178582;
+    background-color:  #0A1828;
 }
 
 .navbar-toggler {
@@ -420,16 +432,48 @@ a:hover{
     font-family: 'trajan';
     src: url('../fuente/Free\ License.otf') format('otf');
     font-weight: normal;
+    /*Font-style*/
     font-style: normal;
 }
 
 .hero-section {
     font-family: "trajan", serif;
-    background: url('../img/fondo.jpg') no-repeat center;
-    background-size: cover;
-    width: 100%;
     position: relative;
+    width: 100%;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    overflow: hidden; /* Oculta cualquier contenido que salga del contenedor */
 }
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el área sin deformarse */
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+.lazo-img {
+    position: absolute;
+    top: 50%; /* Ajusta la posición vertical */
+    left: 94%; /* Ajusta la posición horizontal */
+    transform: translate(-50%, -50%); /* Centra la imagen respecto al botón */
+    z-index: 1; /* Envía la imagen detrás del botón */
+    width: 80px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+    overflow: hidden; /* Asegura que cualquier parte extra de la imagen quede fuera del área activa */
+    pointer-events: auto; /* Asegura que el contenedor sea interactivo */
+    transition: all 0.3s ease ; /* Hace la animación suave */
+}
+
+.lazo-img:hover {
+    transform: scale(1.1) rotate(21deg); /* Aumenta el tamaño y rota la imagen */
+    transition: all 0.3s ease ; /* Hace la animación suave */
+    left: 90%; /* Ajusta la posición horizontal */
+    top: 7%; /* Ajusta la posición vertical */
+    filter: brightness(1.2); /* Aumenta el brillo */
+}
+
 
 .hero-section::before {
     background-color: rgba(0, 0, 0, 0.6);
@@ -465,6 +509,10 @@ a:hover{
     text-align: center;
 }
 
+#license:hover{
+    color: #0A1828;
+}
+
 .cursor {
     border-right: 2px solid black;
     /* Simula el cursor */
@@ -472,7 +520,6 @@ a:hover{
     animation: parpadeo 1s step-end infinite;
     /* Cursor parpadeante */
 }
-
 
 
 @keyframes escribir {
@@ -575,7 +622,9 @@ h3 {
 .cuerpo-medio p{
     font-size: 17px;
     padding: 0;
+    /*Interlineado*/
     line-height: 25px;
+    /*Alineacion del texto*/
     text-align: justify;
     display:flex;
     justify-content: center;
@@ -618,6 +667,7 @@ h3 {
 }
 
 a {
+    /*Decoracion del texto*/
     text-decoration: none;
     color: white;
 }
@@ -627,6 +677,8 @@ a {
 }
 
 a:hover {
+    /*Tabulado del texto*/
+    text-indent: 0%;
     color: #BFA181;
 }
 
