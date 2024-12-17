@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Bootstrap Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .box {
+            height: 50px;
+            margin: 2px 0;
+            border: 2px solid;
+        }
+
+        .red {
+            background-color: red;
+            height: 328px;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .orange {
+            background-color: orange;
+            height: 150px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Fila principal -->
+        <div class="row">
+            <div class="col-12 box green"></div>
+        </div>
+        <div class="row">
+            <div class="col-2 ">
+                <div style="background-color: red;" class="p-5 h-100"></div>
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-5">
+                                <div style="background-color: pink;">11</div>
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 box green" style="height: 20px;"></div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

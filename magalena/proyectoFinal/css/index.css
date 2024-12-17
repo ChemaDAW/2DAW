@@ -1,14 +1,20 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /*Font-Family*/
     font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-a{
+a {
     color: green;
 }
-a:hover{
+
+a:hover {
     color: #178582;
 }
 
@@ -141,14 +147,15 @@ a:hover{
 
 
 
-#enlaceTerminos{
+#enlaceTerminos {
     color: black;
     text-decoration: underline
 }
 
-#enlaceTerminos:hover{
+#enlaceTerminos:hover {
     color: #178582;
 }
+
 .login-button {
     background-color: #178582;
     color: white;
@@ -158,11 +165,11 @@ a:hover{
     text-decoration: none;
     z-index: 2;
     transition: 0.3s background-color;
-   
+
 }
 
 .login-button:hover {
-    background-color:  #0A1828;
+    background-color: #0A1828;
 }
 
 .navbar-toggler {
@@ -287,41 +294,76 @@ a:hover{
     height: 5em;
     padding: 0;
     margin: 0px;
-  }
+}
 
-  #reservation-card {
+#reservation-card {
     align-items: center;
     width: 100%;
     border-radius: 0px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     padding: 2rem;
-  }
+}
 
-  .form-label {
-    color:#BFA181;
+.form-label {
+    color: #BFA181;
     font-weight: 500;
-  }
+}
 
-  .form-control, .form-select {
+.form-control,
+.form-select {
     border-radius: 0px;
-    color:#178582
-  }
+    color: #178582
+}
 
-  #submit-button {
-    background-color:#BFA181;
+#submit-button {
+    background-color: #BFA181;
     color: black;
     border: none;
     font-size: 1rem;
     padding: 0.75rem 2rem;
     border-radius: 0px;
     transition: background-color 0.3s;
-  }
+}
 
-  #submit-button:hover {
-    background-color:#0A1828;
+#submit-button:hover {
+    background-color: #0A1828;
     color: white;
-  }
+}
+
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 20px;
+        height: auto; /* Permite más flexibilidad */
+        text-align: center;
+    }
+    .hero-section h1,
+    .hero-section h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    .footer-content {
+        width: 100%;
+        /* Acomoda en toda la pantalla */
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .social-icons {
+        margin: 10px 0;
+    }
+
+    .social-icons li {
+        margin: 0 5px;
+    }
+
+    .bottom-bar {
+        padding: 5px 0;
+    }
+}
+
 @media (max-width: 767px) {
 
     /* Ajustes de la barra de navegación */
@@ -369,27 +411,6 @@ a:hover{
         margin-top: 10px;
     }
 
-    /* Ajustes para el Hero Section */
-    .hero-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        /* Ocupa la altura completa de la pantalla */
-        text-align: center;
-        background-size: cover;
-        background-position: center;
-        width: 100vw;
-        /* Ocupa todo el ancho de la pantalla */
-        position: relative;
-        box-sizing: border-box;
-        padding: 20px;
-        margin: 0;
-    }
-
-
-    /* Ajustes de los contenedores */
     .main-container,
     .secon-container {
         padding: 20px;
@@ -521,8 +542,10 @@ a:hover{
     font-family: "trajan", serif;
     position: relative;
     width: 100%;
-    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
-    overflow: hidden; /* Oculta cualquier contenido que salga del contenedor */
+    height: 100vh;
+    /* Asegura que ocupe toda la altura de la ventana */
+    overflow: hidden;
+    /* Oculta cualquier contenido que salga del contenedor */
 }
 
 .hero-video {
@@ -531,28 +554,44 @@ a:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cubre todo el área sin deformarse */
-    z-index: -1; /* Coloca el video detrás del contenido */
+    object-fit: cover;
+    /* Cubre todo el área sin deformarse */
+    z-index: -1;
+    /* Coloca el video detrás del contenido */
 }
+
 .lazo-img {
     position: absolute;
-    top: 50%; /* Ajusta la posición vertical */
-    left: 94%; /* Ajusta la posición horizontal */
-    transform: translate(-50%, -50%); /* Centra la imagen respecto al botón */
-    z-index: 1; /* Envía la imagen detrás del botón */
-    width: 80px; /* Ajusta el tamaño de la imagen según sea necesario */
+    top: 50%;
+    /* Ajusta la posición vertical */
+    left: 94%;
+    /* Ajusta la posición horizontal */
+    transform: translate(-50%, -50%);
+    /* Centra la imagen respecto al botón */
+    z-index: 1;
+    /* Envía la imagen detrás del botón */
+    width: 80px;
+    /* Ajusta el tamaño de la imagen según sea necesario */
     height: auto;
-    overflow: hidden; /* Asegura que cualquier parte extra de la imagen quede fuera del área activa */
-    pointer-events: auto; /* Asegura que el contenedor sea interactivo */
-    transition: all 0.3s ease ; /* Hace la animación suave */
+    overflow: hidden;
+    /* Asegura que cualquier parte extra de la imagen quede fuera del área activa */
+    pointer-events: auto;
+    /* Asegura que el contenedor sea interactivo */
+    transition: all 0.3s ease;
+    /* Hace la animación suave */
 }
 
 .lazo-img:hover {
-    transform: scale(1.1) rotate(21deg); /* Aumenta el tamaño y rota la imagen */
-    transition: all 0.3s ease ; /* Hace la animación suave */
-    left: 90%; /* Ajusta la posición horizontal */
-    top: 7%; /* Ajusta la posición vertical */
-    filter: brightness(1.2); /* Aumenta el brillo */
+    transform: scale(1.1) rotate(21deg);
+    /* Aumenta el tamaño y rota la imagen */
+    transition: all 0.3s ease;
+    /* Hace la animación suave */
+    left: 90%;
+    /* Ajusta la posición horizontal */
+    top: 7%;
+    /* Ajusta la posición vertical */
+    filter: brightness(1.2);
+    /* Aumenta el brillo */
 }
 
 
@@ -590,7 +629,7 @@ a:hover{
     text-align: center;
 }
 
-#license:hover{
+#license:hover {
     color: #0A1828;
 }
 
@@ -700,17 +739,18 @@ h3 {
     padding: 0;
 }
 
-.cuerpo-medio p{
+.cuerpo-medio p {
     font-size: 17px;
     padding: 0;
     /*Interlineado*/
     line-height: 25px;
     /*Alineacion del texto*/
     text-align: justify;
-    display:flex;
+    display: flex;
     justify-content: center;
     margin: 0 auto;
-    width: 65%; /* Ajusta el ancho del párrafo */
+    width: 65%;
+    /* Ajusta el ancho del párrafo */
 }
 
 
