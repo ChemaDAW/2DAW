@@ -1,7 +1,30 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
+    margin: 0;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+footer {
+    margin-top: auto;
+}
+
 
 .navbar-brand img {
     margin-right: 10px;
+}
+
+footer{
+    background-color: darkgrey;
+    color: white;
+}
+
+#carouselExample .carousel-item img {
+    height: 600px; /* Ajusta la altura según lo que necesites */
+    width: 100%; /* La anchura se ajusta a todo el contenedor */
+    object-fit: cover; /* Esto asegura que la imagen cubra el contenedor sin distorsionarse */
 }
