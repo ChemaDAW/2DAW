@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Bootstrap Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .box {
+            height: 50px;
+            margin: 2px 0;
+        }
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Fila principal -->
+        <div class="row">
+            <!-- Caja roja ocupa toda la fila -->
+            <div class="col-12 box red"></div>
+        </div>
+
+        <div class="row">
+            <!-- Caja azul y verde en sm se alinean, en xs se apilan -->
+            <div class="col-12 col-sm-4 box blue"></div>
+            <div class="col-12 col-sm-8 box green"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
