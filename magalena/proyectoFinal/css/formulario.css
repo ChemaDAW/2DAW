@@ -207,30 +207,12 @@ body{
     font-style: normal;
 }
 
-.lazo-img {
-    position: absolute;
-    top: 50%; /* Ajusta la posición vertical */
-    left: 94%; /* Ajusta la posición horizontal */
-    transform: translate(-50%, -50%); /* Centra la imagen respecto al botón */
-    z-index: 1; /* Envía la imagen detrás del botón */
-    width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
-    height: auto;
-    overflow: hidden; /* Asegura que cualquier parte extra de la imagen quede fuera del área activa */
-    pointer-events: auto; /* Asegura que el contenedor sea interactivo */
-    transition: all 0.3s ease ; /* Hace la animación suave */
-}
-
-.lazo-img:hover {
-    transform: scale(1.1) rotate(21deg); /* Aumenta el tamaño y rota la imagen */
-    transition: all 0.3s ease ; /* Hace la animación suave */
-    left: 90%; /* Ajusta la posición horizontal */
-    top: 20%; /* Ajusta la posición vertical */
-    filter: brightness(1.2); /* Aumenta el brillo */
+.hero-video {
+    filter: brightness(40%); /* Oscurece un poco el video para mayor contraste */
 }
 
 .hero-section {
     font-family: "trajan", serif;
-    background: url('../img/alambra.jpg') no-repeat center;
     /*Opacidad de la imagen*/
     opacity: 0.95;
     background-size: cover;

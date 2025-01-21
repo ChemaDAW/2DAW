@@ -18,7 +18,9 @@ a:hover {
     color: #178582;
 }
 
-
+.hero-video {
+    filter: brightness(70%); /* Oscurece un poco el video para mayor contraste */
+}
 
 .navbar {
     background-color: white;
@@ -260,26 +262,6 @@ a:hover {
     color: black;
 }
 
-@media(min-width: 991px) {
-    .nav-link:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        height: 2px;
-        background-color: #178582;
-        visibility: hidden;
-        transition: 0.3s ease-in-out;
-    }
-
-    .nav-link:hover::before,
-    .nav-link.active::before {
-        width: 100%;
-        visibility: visible;
-    }
-}
 
 .navbar-brand {
     margin-left: 5%;
@@ -332,41 +314,423 @@ a:hover {
 }
 
 
-@media (max-width: 576px) {
-    .hero-section {
-        padding: 20px;
-        height: auto; /* Permite más flexibilidad */
-        text-align: center;
-    }
-    .hero-section h1,
-    .hero-section h2 {
-        font-size: 1.5rem;
-        margin: 10px 0;
+
+
+
+
+.review-container {
+    background-color: #178582;
+    /* Color de fondo del contenedor */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+.review-card {
+    border: 1px solid #e0e0e0;
+    /* Borde ligero */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    transition: transform 0.3s;
+    /* Transición suave al hover */
+    padding: 15px;
+    margin-bottom: 20px;
+    /* Espacio entre tarjetas */
+    background-color: white;
+    /* Color de fondo blanco para las tarjetas */
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.secon-container h2 {
+    color: #BFA181;
+}
+
+.card-title {
+    font-weight: bold;
+    /* Título en negrita */
+    color: #178582;
+    /* Color del título */
+}
+
+.card-text {
+    color: #555;
+    /* Color del texto de la reseña */
+}
+
+@font-face {
+    font-family: 'trajan';
+    src: url('../fuente/Free\ License.otf') format('otf');
+    font-weight: normal;
+    /*Font-style*/
+    font-style: normal;
+}
+
+.hero-section {
+    font-family: "trajan", serif;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Asegura que ocupe toda la altura de la ventana */
+    overflow: hidden;
+    /* Oculta cualquier contenido que salga del contenedor */
+}
+
+.hero-video {
+    background: url('../img/video.mp4');
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cubre todo el área sin deformarse */
+    z-index: -1;
+    /* Coloca el video detrás del contenido */
+}
+
+
+
+.hero-section::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-section .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+    align-items: center;
+}
+
+
+.hero-section h2 {
+    font-size: 2.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    /* Comienza con ancho 0 */
+    animation: escribir 5s steps(50) infinite;
+    /* Animación para escribir */
+    display: inline-block;
+    /* Para que no ocupe todo el ancho */
+    text-align: center;
+}
+
+#license:hover {
+    color: #0A1828;
+}
+
+.cursor {
+    border-right: 2px solid black;
+    /* Simula el cursor */
+    height: 1.2em;
+    animation: parpadeo 1s step-end infinite;
+    /* Cursor parpadeante */
+}
+
+
+@keyframes escribir {
+    0% {
+        width: 0;
+        /* Comienza sin mostrar texto */
     }
 
-    .footer-content {
+    100% {
         width: 100%;
-        /* Acomoda en toda la pantalla */
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .social-icons {
-        margin: 10px 0;
-    }
-
-    .social-icons li {
-        margin: 0 5px;
-    }
-
-    .bottom-bar {
-        padding: 5px 0;
+        /* Al final, todo el texto es visible */
     }
 }
 
-@media (max-width: 767px) {
+@keyframes parpadeo {
+    50% {
+        border-color: transparent;
+        /* Hace que el cursor desaparezca temporalmente */
+    }
+}
 
-    /* Ajustes de la barra de navegación */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.5rem;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    .login-button {
+        font-size: 12px;
+        padding: 5px 15px;
+        margin-right: 5%;
+    }
+}
+
+footer {
+    background: linear-gradient(to bottom, black, black);
+    padding-top: 10px;
+    margin: 0;
+}
+
+.container {
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 33.3%;
+    margin-top: 2%;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.footer-content p {
+    width: 190px;
+    margin: auto;
+    padding: 7px;
+}
+
+.footer-content ul {
+    text-align: center;
+}
+
+.list {
+    padding: 0;
+}
+
+.list li {
+    width: auto;
+    text-align: center;
+    list-style-type: none;
+    padding: 5px;
+    position: relative;
+}
+
+
+.cuerpo-medio {
+    background-color: #0d1b2a; /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
+    height: 38vh; /* Asegura que ocupe toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Títulos y párrafos */
+.cuerpo-medio h1 {
+    font-size: 2.5rem; /* Ajuste para móviles */
+    color: #178582;
+}
+
+.cuerpo-medio h3 {
+    font-size: 1.75rem;
+    color: #BFA181; /* Color más claro para diferenciarlo */
+}
+
+.cuerpo-medio p {
+    font-size: 1rem; /* Tamaño de texto en móviles */
+    max-width: 1000px; /* Limita el ancho del texto */
+    margin: 0 auto; /* Centra el texto */
+}
+
+
+
+.list li::before {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #178582;
+    transition-duration: .5s;
+}
+
+.list li:hover::before {
+    width: 70px;
+}
+
+.social-icons {
+    text-align: center;
+    padding: 1;
+    margin-top: 20%;
+}
+
+.social-icons li {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+
+.social-icons i {
+    color: white;
+    font-size: 25px;
+}
+
+a {
+    /*Decoracion del texto*/
+    text-decoration: none;
+    color: white;
+}
+
+.footer-content p {
+    color: white;
+}
+
+a:hover {
+    /*Tabulado del texto*/
+    text-indent: 0%;
+    color: #BFA181;
+}
+
+.social-icons i:hover {
+    color: #BFA181;
+}
+
+.bottom-bar {
+    background: #BFA181;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+
+.bottom-bar p {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+
+.modal-content {
+    margin: auto; /* Asegura el centrado horizontal */
+    max-width: 500px; /* Limita el ancho del modal */
+}
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.stars button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+}
+.stars button.selected {
+    color: gold;
+}
+
+.hero-section h1 {
+    font-size: 4rem; /* Tamaño por defecto para móviles */
+}
+
+.hero-section h2 {
+    font-size: 3rem; /* Tamaño por defecto para móviles */
+}
+
+
+
+
+
+
+
+#botonCalificacion{
+    background-color: green;
+}
+/*MEDIAA*/
+@media (min-width: 768px) {
+    .hero-section h1 {
+        font-size: 4.5rem; /* Tamaño para tablets y pantallas medianas */
+    }
+    .hero-section h2 {
+        font-size: 2.5rem;
+    }
+    .cuerpo-medio {
+        height: 50vh; /* Aumenta la altura en pantallas medianas */
+    }
+
+    .cuerpo-medio h1 {
+        font-size: 3.5rem; /* Texto más grande en pantallas medianas */
+    }
+
+    .cuerpo-medio p {
+        font-size: 1.25rem; /* Texto más grande en pantallas medianas */
+    }
+}
+
+/* Para pantallas grandes (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .nav-link:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 2px;
+        background-color: #178582;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+    .cuerpo-medio {
+        height: 38vh; /* Aumenta la altura en pantallas grandes */
+    }
+
+    .cuerpo-medio h1 {
+        font-size: 4rem; /* Aumenta el tamaño del título */
+    }
+
+    .cuerpo-medio h3 {
+        font-size: 2rem; /* Aumenta el tamaño del subtítulo */
+    }
+
+    .cuerpo-medio p {
+        font-size: 1.5rem; /* Texto más grande en pantallas grandes */
+        max-width: 1200px; /* Ajusta el ancho máximo del texto */
+    }
+}
+
+
+@media (max-width: 767px) {
+    .cuerpo-medio {
+        height: 120vh; /* Aumenta la altura para dispositivos móviles */
+    }
+
+    .cuerpo-medio h1 {
+        font-size: 3.5rem; /* Texto aún más grande en móviles */
+    }
+
+    .cuerpo-medio h3 {
+        font-size: 2.2rem; /* Aumenta el tamaño del subtítulo */
+    }
+
+    .cuerpo-medio p {
+        font-size: 1.3rem; /* Texto más grande en móviles */
+        max-width: 90%; /* Asegura que el texto no sea demasiado largo */
+    }
     .navbar {
         padding: 0.5rem;
         height: auto;
@@ -483,341 +847,51 @@ a:hover {
         font-size: 14px;
     }
 }
+@media (max-width: 576px) {
 
-.review-container {
-    background-color: #178582;
-    /* Color de fondo del contenedor */
-    padding: 20px;
-    /* Espaciado interno */
-    border-radius: 10px;
-    /* Bordes redondeados */
-}
-
-.review-card {
-    border: 1px solid #e0e0e0;
-    /* Borde ligero */
-    border-radius: 10px;
-    /* Bordes redondeados */
-    transition: transform 0.3s;
-    /* Transición suave al hover */
-    padding: 15px;
-    margin-bottom: 20px;
-    /* Espacio entre tarjetas */
-    background-color: white;
-    /* Color de fondo blanco para las tarjetas */
-}
-
-.review-card:hover {
-    transform: scale(1.05);
-    /* Aumenta el tamaño al pasar el mouse */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil */
-}
-
-.secon-container h2 {
-    color: #BFA181;
-}
-
-.card-title {
-    font-weight: bold;
-    /* Título en negrita */
-    color: #178582;
-    /* Color del título */
-}
-
-.card-text {
-    color: #555;
-    /* Color del texto de la reseña */
-}
-
-@font-face {
-    font-family: 'trajan';
-    src: url('../fuente/Free\ License.otf') format('otf');
-    font-weight: normal;
-    /*Font-style*/
-    font-style: normal;
-}
-
-.hero-section {
-    font-family: "trajan", serif;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    /* Asegura que ocupe toda la altura de la ventana */
-    overflow: hidden;
-    /* Oculta cualquier contenido que salga del contenedor */
-}
-
-.hero-video {
-    background: url('../img/video.mp4');
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Cubre todo el área sin deformarse */
-    z-index: -1;
-    /* Coloca el video detrás del contenido */
-}
-
-.lazo-img {
-    position: absolute;
-    top: 50%;
-    /* Ajusta la posición vertical */
-    left: 94%;
-    /* Ajusta la posición horizontal */
-    transform: translate(-50%, -50%);
-    /* Centra la imagen respecto al botón */
-    z-index: 1;
-    /* Envía la imagen detrás del botón */
-    width: 80px;
-    /* Ajusta el tamaño de la imagen según sea necesario */
-    height: auto;
-    overflow: hidden;
-    /* Asegura que cualquier parte extra de la imagen quede fuera del área activa */
-    pointer-events: auto;
-    /* Asegura que el contenedor sea interactivo */
-    transition: all 0.3s ease;
-    /* Hace la animación suave */
-}
-
-.lazo-img:hover {
-    transform: scale(1.1) rotate(21deg);
-    /* Aumenta el tamaño y rota la imagen */
-    transition: all 0.3s ease;
-    /* Hace la animación suave */
-    left: 90%;
-    /* Ajusta la posición horizontal */
-    top: 7%;
-    /* Ajusta la posición vertical */
-    filter: brightness(1.2);
-    /* Aumenta el brillo */
-}
-
-
-.hero-section::before {
-    background-color: rgba(0, 0, 0, 0.6);
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.hero-section .container {
-    height: 100vh;
-    z-index: 1;
-    position: relative;
-    align-items: center;
-}
-
-.hero-section h1 {
-    font-size: 3.5em;
-}
-
-.hero-section h2 {
-    font-size: 2.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    /* Comienza con ancho 0 */
-    animation: escribir 5s steps(50) infinite;
-    /* Animación para escribir */
-    display: inline-block;
-    /* Para que no ocupe todo el ancho */
-    text-align: center;
-}
-
-#license:hover {
-    color: #0A1828;
-}
-
-.cursor {
-    border-right: 2px solid black;
-    /* Simula el cursor */
-    height: 1.2em;
-    animation: parpadeo 1s step-end infinite;
-    /* Cursor parpadeante */
-}
-
-
-@keyframes escribir {
-    0% {
-        width: 0;
-        /* Comienza sin mostrar texto */
-    }
-
-    100% {
+    .footer-content {
         width: 100%;
-        /* Al final, todo el texto es visible */
+        /* Acomoda en toda la pantalla */
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .social-icons {
+        margin: 10px 0;
+    }
+
+    .social-icons li {
+        margin: 0 5px;
+    }
+
+    .bottom-bar {
+        padding: 5px 0;
+    }
+}
+@media (min-width: 1200px) {
+    .hero-section h1 {
+        font-size: 7rem; /* Tamaño para pantallas grandes */
+    }
+    .hero-section h2 {
+        font-size: 6rem;
     }
 }
 
-@keyframes parpadeo {
-    50% {
-        border-color: transparent;
-        /* Hace que el cursor desaparezca temporalmente */
-    }
-}
-
-@media (max-width: 991px) {
-    .navbar {
-        padding: 0.5rem;
-        height: auto;
-        border-radius: 16px;
+@media (max-width: 400px) {
+    .cuerpo-medio {
+        height: 140vh; /* Aumenta la altura para dispositivos móviles */
     }
 
-    .login-button {
-        font-size: 12px;
-        padding: 5px 15px;
-        margin-right: 5%;
+    .cuerpo-medio h1 {
+        font-size: 3.5rem; /* Texto aún más grande en móviles */
     }
-}
 
-footer {
-    background: linear-gradient(to bottom, black, black);
-    padding-top: 10px;
-    margin: 0;
-}
+    .cuerpo-medio h3 {
+        font-size: 2.2rem; /* Aumenta el tamaño del subtítulo */
+    }
 
-.container {
-    width: 1140px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-content {
-    width: 33.3%;
-    margin-top: 2%;
-}
-
-h3 {
-    font-size: 28px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.footer-content p {
-    width: 190px;
-    margin: auto;
-    padding: 7px;
-}
-
-.footer-content ul {
-    text-align: center;
-}
-
-.list {
-    padding: 0;
-}
-
-.list li {
-    width: auto;
-    text-align: center;
-    list-style-type: none;
-    padding: 5px;
-    position: relative;
-}
-
-.cuerpo-medio {
-    text-align: center;
-    background-color: #0A1828;
-    margin: 0;
-    color: white;
-    padding: 20px 0;
-}
-
-.cuerpo-medio h3 {
-    color: #BFA181;
-}
-
-.cuerpo-medio h1 {
-    color: #178582;
-    margin: 0;
-    padding: 0;
-}
-
-.cuerpo-medio p {
-    font-size: 17px;
-    padding: 0;
-    /*Interlineado*/
-    line-height: 25px;
-    /*Alineacion del texto*/
-    text-align: justify;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 65%;
-    /* Ajusta el ancho del párrafo */
-}
-
-
-.list li::before {
-    content: '';
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 100%;
-    width: 0;
-    height: 2px;
-    background: #178582;
-    transition-duration: .5s;
-}
-
-.list li:hover::before {
-    width: 70px;
-}
-
-.social-icons {
-    text-align: center;
-    padding: 1;
-    margin-top: 20%;
-}
-
-.social-icons li {
-    display: inline-block;
-    text-align: center;
-    padding: 5px;
-}
-
-.social-icons i {
-    color: white;
-    font-size: 25px;
-}
-
-a {
-    /*Decoracion del texto*/
-    text-decoration: none;
-    color: white;
-}
-
-.footer-content p {
-    color: white;
-}
-
-a:hover {
-    /*Tabulado del texto*/
-    text-indent: 0%;
-    color: #BFA181;
-}
-
-.social-icons i:hover {
-    color: #BFA181;
-}
-
-.bottom-bar {
-    background: #BFA181;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 50px;
-}
-
-.bottom-bar p {
-    color: white;
-    margin: 0;
-    font-size: 16px;
-    padding: 7px;
+    .cuerpo-medio p {
+        font-size: 1.3rem; /* Texto más grande en móviles */
+        max-width: 90%; /* Asegura que el texto no sea demasiado largo */
+    }
 }

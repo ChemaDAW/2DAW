@@ -27,7 +27,7 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <img src="../img/logo.png" class="img-fluid" alt="Logo">
+                    <img src="../img/LogoChema.png" class="img-fluid" alt="Logo">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -55,7 +55,12 @@
 
         </div>
     </nav>
-    <section class="hero-section">
+    <section class="hero-section position-relative vh-100">
+        <video class="hero-video w-100 h-100 position-absolute top-0 start-0" autoplay loop muted
+            style="object-fit: cover;">
+            <source src="../img/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
             <div class="login-section" style="width: 50%;">
                 <hr>
@@ -92,6 +97,8 @@
             </div>     
         </div>
     </section>
+    
+    
     <footer>
         <div class="container">
             <div class="footer-content">
