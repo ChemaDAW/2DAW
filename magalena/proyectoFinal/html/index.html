@@ -7,24 +7,24 @@
     <title>Ejido Hotel</title>
     <link rel="icon" href="../img/" type="image/x-icon">
 
-    <!--Link al bootstrap-->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Estilos y fuentes -->
     <link href="../css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon"
-        href="../img/DALL_E_2024-10-25_09.32.08_-_The_logo_of__CHEMA_HOTEL__with_a_Halloween_theme__designed_to_look_great_on_a_white_background._Include_dark__spooky_elements_like_cobwebs__pumpkins__-removebg-preview.png"
-        type="image/x-icon">
     <link href="https://fonts.cdnfonts.com/css/bickham-script-pro" rel="stylesheet">
-
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand me-auto" href="index.html"><img src="../img/LogoChema.png" class="img-fluid"
-                    alt="Logo">
+            <a class="navbar-brand me-auto" href="index.html">
+                <img src="../img/LogoChema.png" class="img-fluid" alt="Logo">
             </a>
+
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -34,7 +34,10 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2 " aria-current="page" href="habitaciones.html">Habitaciones</a>
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="habitaciones.html">Habitaciones</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-lg-2" href="#">Servicios</a>
@@ -48,15 +51,19 @@
                     </ul>
                 </div>
             </div>
-            <a href="formulario.html" class="login-button">Entrar</a>
-            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+
+            <!-- Botón CORREGIDO con ID -->
+            <a class="login-button" id="showModalBtn" data-bs-toggle="modal" data-bs-target="#loginModal">Entrar</a>
+
+            <button class="navbar-toggler pe-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
-    <section class="hero-section position-relative vh-100">
-        <video class="hero-video w-100 h-100 position-absolute top-0 start-0" autoplay loop muted
+
+    <!-- Sección Hero -->
+    <section id="hero-section" class="hero-section position-relative ">
+        <video class="hero-video w-100  position-absolute " autoplay loop muted
             style="object-fit: cover;">
             <source src="../img/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -68,51 +75,148 @@
         </div>
     </section>
 
+    <!-- Modal de Login/Registro -->
+    <div class="modal fade" id="loginModal" tabindex="-1"> <!-- Quitamos la clase "fade" -->
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Acceso/Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs mb-4">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#login">Acceder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#register">Registrarse</a>
+                        </li>
+                    </ul>
 
+                    <div class="tab-content">
+                        <!-- Formulario de Login -->
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Usuario o Correo electrónico</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Recuérdame</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Acceder</button>
+                                <a href="#" class="ms-3" id="olvidoContrasena"> ¿Olvidaste la contraseña?</a>
+                            </form>
+                        </div>
 
+                        <!-- Formulario de Registro -->
+                        <div class="tab-pane fade" id="register">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="registerPassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Repetir Contraseña</label>
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Registrarse</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-    <div id="reservation-container" class="container-fluid">
-        <div id="reservation-card" class="card">
-            <form>
+   
+<div id="reservation-container" class="container-fluid py-4">
+    <div id="reservation-card" class="card border-primary shadow-lg" style="background-color:#f2ece4;border: none;">
+        <div class="card-body p-3 p-md-4">
+            <form class="needs-validation" novalidate>
                 <div class="row g-3 align-items-center">
                     <!-- Fecha de Entrada -->
-                    <div class="col-md-2">
-                        <input type="date" class="form-control" id="input-checkin-date" required>
+                    <div class="col-12 col-md-6 col-lg">
+                        <div class="input-group">
+                            <span class="input-group-text bg-primary text-dark">
+                                <i class="fas fa-calendar-check"></i>
+                            </span>
+                            <div class="form-floating flex-grow-1">
+                                <input type="date" class="form-control" id="input-checkin-date" required>
+                                <label for="input-checkin-date">Entrada</label>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Fecha de Salida -->
-                    <div class="col-md-2">
-                        <input type="date" class="form-control" id="input-checkout-date" required>
+                    <div class="col-12 col-md-6 col-lg">
+                        <div class="input-group">
+                            <span class="input-group-text bg-primary text-dark">
+                                <i class="fas fa-calendar-times"></i>
+                            </span>
+                            <div class="form-floating flex-grow-1">
+                                <input type="date" class="form-control" id="input-checkout-date" required>
+                                <label for="input-checkout-date">Salida</label>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Número de Huéspedes -->
-                    <div class="col-md-3">
-                        <select id="select-guests" class="form-select" required>
-                            <option value="1">1 Huésped</option>
-                            <option value="2">2 Huéspedes</option>
-                            <option value="3">3 Huéspedes</option>
-                            <option value="4">4 Huéspedes</option>
-                            <option value="5">5 Huéspedes</option>
-                        </select>
+                    <!-- Huéspedes -->
+                    <div class="col-12 col-md-6 col-lg">
+                        <div class="input-group">
+                            <span class="input-group-text bg-primary text-dark">
+                                <i class="fas fa-users"></i>
+                            </span>
+                            <div class="form-floating flex-grow-1">
+                                <select id="select-guests" class="form-select" required>
+                                    <option value="1">1 Huésped</option>
+                                    <option value="2">2 Huéspedes</option>
+                                    <option value="3">3 Huéspedes</option>
+                                    <option value="4">4 Huéspedes</option>
+                                </select>
+                                <label for="select-guests">Huéspedes</label>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Código de Descuento -->
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" id="input-discount-code"
-                            placeholder="Ingresa tu código aquí">
+                    <!-- Código Descuento -->
+                    <div class="col-12 col-md-6 col-lg">
+                        <div class="input-group">
+                            <span class="input-group-text bg-primary text-dark">
+                                <i class="fas fa-tag"></i>
+                            </span>
+                            <div class="form-floating flex-grow-1">
+                                <input type="text" class="form-control" id="input-discount-code" 
+                                       placeholder="Código">
+                                <label for="input-discount-code">Código Desc.</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <button id="submit-button" type="submit" class="btn btn-primary">Reservar</button>
+
+                    <!-- Botón Reservar -->
+                    <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                        <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                            <i class="fas fa-concierge-bell me-2"></i>Reservar
+                        </button>
                     </div>
                 </div>
-
-
             </form>
         </div>
     </div>
-    <section class="cuerpo-medio py-4">
+</div>
+  
+
+
+    <section class="cuerpo-medio py-2">
         <div class="container">
             <div class="text-center text-md-start">
                 <h3 class="fw-bold mb-3">Un Lugar Único</h3>
@@ -120,7 +224,8 @@
                 <p class="fs-6 fs-md-5 lh-lg">
                     Chema Hotel es un alojamiento ideal para los que buscan vivir y descubrir la belleza de una ciudad
                     única.
-                    Su extraordinaria ubicación, en el centro de El Ejido, la comodidad de sus habitaciones, la magnífica
+                    Su extraordinaria ubicación, en el centro de El Ejido, la comodidad de sus habitaciones, la
+                    magnífica
                     relación
                     calidad-precio, la disponibilidad de dejar el vehículo resguardado y disfrutar sin preocupaciones,
                     lo
@@ -165,7 +270,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid secon-container">
+    <div class="container-fluid secon-container" id="secon-container">
         <h2 class="text-center mb-4">Reseñas de Usuarios</h2> <!-- Título en la parte superior -->
         <div class="row">
             <div class="col-md-4">
@@ -230,6 +335,10 @@
                     <li><a href="https://www.instagram.com/granhotelchema/"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
+            <audio id="audio" autoplay>
+                <source src="../img/OnePiece.mp3" type="audio/mp3">
+                Tu navegador no soporta el formato de audio.
+            </audio>
         </div>
         <div class="bottom-bar">
             <p>&copy; 2024 Chema Hotel . Todos los derechos reservados</p>
@@ -243,7 +352,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button id="rateNow" class="btn btn-success" id="botonCalificacion">Valorar ahora</button>
+                    <button id="rateNow" class="btn btn-success">Valorar ahora</button>
                     <button id="remindLater" class="btn btn-secondary">Hacerlo más tarde</button>
                     <button id="doNotShow" class="btn btn-danger">No mostrar más</button>
                 </div>
@@ -275,19 +384,33 @@
             </div>
         </div>
     </div>
-
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
+    <!-- Script personalizado -->
     <script>
-        // Inicialización de modales
+        // Control del botón de login
+        const modal = document.getElementById('loginModal');
+        const showBtn = document.getElementById('showModalBtn');
+
+        modal.addEventListener('show.bs.modal', () => {
+            showBtn.classList.add('d-none');
+        });
+
+        modal.addEventListener('hidden.bs.modal', () => {
+            showBtn.classList.remove('d-none');
+        });
+
+
+
         const ratingModalElement = document.getElementById('ratingModal');
         const ratingModal = new bootstrap.Modal(ratingModalElement);
 
         const starRatingModalElement = document.getElementById('starRatingModal');
         const starRatingModal = new bootstrap.Modal(starRatingModalElement);
 
-        // Referencias a botones y estrellas
         const rateNowBtn = document.getElementById('rateNow');
         const remindLaterBtn = document.getElementById('remindLater');
         const doNotShowBtn = document.getElementById('doNotShow');
@@ -295,14 +418,17 @@
         const submitRatingBtn = document.getElementById('submitRating');
 
         let selectedRating = null;
+        let reminderTimeout;
 
-        // Mostrar el modal principal cada 10 minutos
+        // Función para mostrar el modal principal
         function showRatingModal() {
-            if (localStorage.getItem("doNotShowAgain") !== "true") {
+            if (localStorage.getItem("doNotShowAgain") !== "true" && localStorage.getItem("remindLaterClicked") !== "true") {
                 ratingModal.show();
             }
         }
-        const tenMinutes = 30000;
+
+        // Inicializar el intervalo para mostrar el modal principal en 10 minutos
+        const tenMinutes = 60000; // 60,000ms = 1 minutos
         let modalInterval = setInterval(showRatingModal, tenMinutes);
 
         // Acciones del modal principal
@@ -310,23 +436,31 @@
             ratingModal.hide();
             starRatingModal.show(); // Abre el segundo modal
             clearInterval(modalInterval); // Detener futuros avisos
-
         });
 
         remindLaterBtn.addEventListener("click", () => {
             ratingModal.hide();
+            // Guardar que el usuario hizo clic en "Hacerlo más tarde"
+            localStorage.setItem("remindLaterClicked", "true");
+            // Programar la reaparición del modal después de 5 minutos
+            reminderTimeout = setTimeout(() => {
+                if (localStorage.getItem("remindLaterClicked") === "true" && localStorage.getItem("doNotShowAgain") !== "true") {
+                    showRatingModal(); // Mostrar el modal después de 5 minutos
+                }
+            }, 120000); // 120,000ms = 2 minutos
         });
 
         doNotShowBtn.addEventListener("click", () => {
             ratingModal.hide();
             localStorage.setItem("doNotShowAgain", "true");
+            localStorage.removeItem("remindLaterClicked"); // Eliminar el flag de "más tarde"
             clearInterval(modalInterval); // Detener futuros avisos
+            clearTimeout(reminderTimeout); // Limpiar el timeout si se activa "No mostrar más"
         });
 
         // Acciones del modal de valoración con estrellas
         stars.forEach((star, index) => {
             star.addEventListener('click', () => {
-                // Marca todas las estrellas hasta la seleccionada
                 stars.forEach((s, i) => {
                     if (i <= index) {
                         s.classList.add('selected');
@@ -334,9 +468,7 @@
                         s.classList.remove('selected');
                     }
                 });
-                // Almacena la calificación seleccionada
                 selectedRating = star.getAttribute('data-value');
-                // Habilita el botón de enviar
                 submitRatingBtn.disabled = false;
             });
         });
@@ -345,11 +477,10 @@
             alert(`¡Gracias por darnos una calificación de ${selectedRating} estrellas!`);
             starRatingModal.hide();
         });
+        // Añade esto al final de tu script
 
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

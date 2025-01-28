@@ -1,13 +1,13 @@
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 body {
     /*Font-Family*/
     font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Calisto MT, Times New Roman, serif;
-    margin: 0;
+    overflow: auto;
     padding: 0;
-    overflow-x: hidden;
+    margin: 0;
 }
 
 a {
@@ -19,7 +19,8 @@ a:hover {
 }
 
 .hero-video {
-    filter: brightness(70%); /* Oscurece un poco el video para mayor contraste */
+    filter: brightness(70%);
+    /* Oscurece un poco el video para mayor contraste */
 }
 
 .navbar {
@@ -257,6 +258,12 @@ a:hover {
     border: none;
 }
 
+#audio {
+    display: none;
+}
+
+
+
 .form-check-label,
 .form-text {
     color: black;
@@ -456,7 +463,6 @@ a:hover {
 @keyframes parpadeo {
     50% {
         border-color: transparent;
-        /* Hace que el cursor desaparezca temporalmente */
     }
 }
 
@@ -468,7 +474,7 @@ a:hover {
     }
 
     .login-button {
-        font-size: 12px;
+        font-size: 20px;
         padding: 5px 15px;
         margin-right: 5%;
     }
@@ -522,9 +528,12 @@ h3 {
 
 
 .cuerpo-medio {
-    background-color: #0d1b2a; /* Fondo oscuro */
-    color: #ffffff; /* Texto claro */
-    height: 38vh; /* Asegura que ocupe toda la altura de la pantalla */
+    background-color: #0d1b2a;
+    /* Fondo oscuro */
+    color: #ffffff;
+    /* Texto claro */
+    height: 38vh;
+    /* Asegura que ocupe toda la altura de la pantalla */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -533,19 +542,24 @@ h3 {
 
 /* Títulos y párrafos */
 .cuerpo-medio h1 {
-    font-size: 2.5rem; /* Ajuste para móviles */
+    font-size: 2.5rem;
+    /* Ajuste para móviles */
     color: #178582;
 }
 
 .cuerpo-medio h3 {
     font-size: 1.75rem;
-    color: #BFA181; /* Color más claro para diferenciarlo */
+    color: #BFA181;
+    /* Color más claro para diferenciarlo */
 }
 
 .cuerpo-medio p {
-    font-size: 1rem; /* Tamaño de texto en móviles */
-    max-width: 1000px; /* Limita el ancho del texto */
-    margin: 0 auto; /* Centra el texto */
+    font-size: 1rem;
+    /* Tamaño de texto en móviles */
+    max-width: 1000px;
+    /* Limita el ancho del texto */
+    margin: 0 auto;
+    /* Centra el texto */
 }
 
 
@@ -618,14 +632,18 @@ a:hover {
 }
 
 .modal-content {
-    margin: auto; /* Asegura el centrado horizontal */
-    max-width: 500px; /* Limita el ancho del modal */
+    margin: auto;
+    /* Asegura el centrado horizontal */
+    max-width: 500px;
+    /* Limita el ancho del modal */
 }
+
 .stars {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
+
 .stars button {
     background: none;
     border: none;
@@ -633,45 +651,92 @@ a:hover {
     color: gray;
     cursor: pointer;
 }
+
 .stars button.selected {
     color: gold;
 }
 
 .hero-section h1 {
-    font-size: 4rem; /* Tamaño por defecto para móviles */
+    font-size: 4rem;
+    /* Tamaño por defecto para móviles */
 }
 
 .hero-section h2 {
-    font-size: 3rem; /* Tamaño por defecto para móviles */
+    font-size: 3rem;
+    /* Tamaño por defecto para móviles */
+}
+
+.btn-primary {
+    background-color:#178582; /* Fondo rojo */
+    border-color:#007bff; /* Borde rojo */
+    color: #ffffff; /* Texto blanco */
+}
+
+#reservation-container {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradiente de colores */
+    /* O */
+    background-image: url('ruta/a/tu/imagen.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+}
+
+.btn-primary:hover {
+    background-color:#0A1828; /* Cambio de color al pasar el mouse */
+    border-color:#333;
 }
 
 
+#olvidoContrasena {
+    color: black !important;
+}
+
+#olvidoContrasena:hover {
+    color: #178582 !important;
+}
+
+@keyframes modalEntrance {
+    0% {
+        transform: scale(0.8) translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal .modal-dialog {
+    animation: modalEntrance 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
 
-
-
-
-#botonCalificacion{
+#botonCalificacion {
     background-color: green;
 }
+
 /*MEDIAA*/
 @media (min-width: 768px) {
     .hero-section h1 {
-        font-size: 4.5rem; /* Tamaño para tablets y pantallas medianas */
+        font-size: 4.5rem;
+        /* Tamaño para tablets y pantallas medianas */
     }
+
     .hero-section h2 {
         font-size: 2.5rem;
     }
+
     .cuerpo-medio {
-        height: 50vh; /* Aumenta la altura en pantallas medianas */
+        height: 70vh;
+        /* Aumenta la altura en pantallas medianas */
     }
 
     .cuerpo-medio h1 {
-        font-size: 3.5rem; /* Texto más grande en pantallas medianas */
+        font-size: 3.5rem;
+        /* Texto más grande en pantallas medianas */
     }
 
     .cuerpo-medio p {
-        font-size: 1.25rem; /* Texto más grande en pantallas medianas */
+        font-size: 1.25rem;
+        /* Texto más grande en pantallas medianas */
     }
 }
 
@@ -695,54 +760,66 @@ a:hover {
         width: 100%;
         visibility: visible;
     }
+
     .cuerpo-medio {
-        height: 38vh; /* Aumenta la altura en pantallas grandes */
+        height: 50vh;
+        /* Aumenta la altura en pantallas grandes */
     }
 
     .cuerpo-medio h1 {
-        font-size: 4rem; /* Aumenta el tamaño del título */
+        font-size: 4rem;
+        /* Aumenta el tamaño del título */
     }
 
     .cuerpo-medio h3 {
-        font-size: 2rem; /* Aumenta el tamaño del subtítulo */
+        font-size: 2rem;
+        /* Aumenta el tamaño del subtítulo */
     }
 
     .cuerpo-medio p {
-        font-size: 1.5rem; /* Texto más grande en pantallas grandes */
-        max-width: 1200px; /* Ajusta el ancho máximo del texto */
+        font-size: 1.5rem;
+        /* Texto más grande en pantallas grandes */
+        max-width: 1200px;
+        /* Ajusta el ancho máximo del texto */
     }
 }
 
 
 @media (max-width: 767px) {
     .cuerpo-medio {
-        height: 120vh; /* Aumenta la altura para dispositivos móviles */
+        height: 110vh;
+        /* Aumenta la altura para dispositivos móviles */
     }
 
     .cuerpo-medio h1 {
-        font-size: 3.5rem; /* Texto aún más grande en móviles */
+        font-size: 3.5rem;
+        /* Texto aún más grande en móviles */
     }
 
     .cuerpo-medio h3 {
-        font-size: 2.2rem; /* Aumenta el tamaño del subtítulo */
+        font-size: 2.2rem;
+        /* Aumenta el tamaño del subtítulo */
     }
 
     .cuerpo-medio p {
-        font-size: 1.3rem; /* Texto más grande en móviles */
-        max-width: 90%; /* Asegura que el texto no sea demasiado largo */
+        font-size: 1.3rem;
+        /* Texto más grande en móviles */
+        max-width: 90%;
+        /* Asegura que el texto no sea demasiado largo */
     }
+
     .navbar {
+        position: fixed;
         padding: 0.5rem;
         height: auto;
         display: flex;
+        margin: 10px;
         flex-direction: column;
         align-items: center;
-        border-radius: 10px;
-        width: 100vw;
+        border-radius: 37px;
+        width: 95vw;
         /* Ocupa todo el ancho de la pantalla */
         box-sizing: border-box;
-        margin: 0;
-        /* Elimina margen */
     }
 
     .navbar-brand {
@@ -752,10 +829,7 @@ a:hover {
         text-align: center;
     }
 
-    .navbar-brand img {
-        width: 80px;
-        height: auto;
-    }
+
 
     .navbar-toggler {
         font-size: 1.5rem;
@@ -847,6 +921,7 @@ a:hover {
         font-size: 14px;
     }
 }
+
 @media (max-width: 576px) {
 
     .footer-content {
@@ -868,30 +943,49 @@ a:hover {
         padding: 5px 0;
     }
 }
+
 @media (min-width: 1200px) {
     .hero-section h1 {
-        font-size: 7rem; /* Tamaño para pantallas grandes */
+        font-size: 7rem;
+        /* Tamaño para pantallas grandes */
     }
+
     .hero-section h2 {
         font-size: 6rem;
     }
 }
 
+
 @media (max-width: 400px) {
     .cuerpo-medio {
-        height: 140vh; /* Aumenta la altura para dispositivos móviles */
+        height: 150vh;
+        /* Aumenta la altura para dispositivos móviles */
     }
 
     .cuerpo-medio h1 {
-        font-size: 3.5rem; /* Texto aún más grande en móviles */
+        font-size: 3.5rem;
+        /* Texto aún más grande en móviles */
     }
 
     .cuerpo-medio h3 {
-        font-size: 2.2rem; /* Aumenta el tamaño del subtítulo */
+        font-size: 2.2rem;
+        /* Aumenta el tamaño del subtítulo */
     }
 
     .cuerpo-medio p {
-        font-size: 1.3rem; /* Texto más grande en móviles */
-        max-width: 90%; /* Asegura que el texto no sea demasiado largo */
+        font-size: 1.3rem;
+        /* Texto más grande en móviles */
+        max-width: 90%;
+        /* Asegura que el texto no sea demasiado largo */
     }
+}
+
+
+
+
+.navbar-brand img {
+    max-width: 150px;
+    /* Ajusta el tamaño máximo del logotipo */
+    height: auto;
+    /* Mantén la proporción del logotipo */
 }
