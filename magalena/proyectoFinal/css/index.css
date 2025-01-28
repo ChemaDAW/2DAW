@@ -61,86 +61,6 @@ a:hover {
     margin-top: 3rem;
 }
 
-#chatbot-container {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
-    height: 400px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    display: none;
-    flex-direction: column;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-#chatbot-header {
-    background: #007bff;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-#chatbot-messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    background: #f9f9f9;
-}
-
-#chatbot-input-container {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-}
-
-#chatbot-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#chatbot-send {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#chatbot-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#chatbot-toggle:hover {
-    background: #0056b3;
-}
-
-#close-chatbot {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
 
 #boton-habitaciones:hover {
     background-color: #178582;
@@ -236,10 +156,12 @@ a:hover {
     background-color: #0A1828;
     color: white;
 }
-
+#inputEmail,#inputNombre{
+    max-width: 70%;
+}
 /* Estilos del campo de texto */
 .form-control {
-    max-width: 70%;
+    max-width: 100%;
     background-color: #f8f9fa;
     color: #BFA181;
     border: none;
@@ -280,7 +202,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 5em;
+    height: 2em;
     padding: 0;
     margin: 0px;
 }
@@ -290,8 +212,20 @@ a:hover {
     width: 100%;
     border-radius: 0px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    padding: 2rem;
+    background-color: #BFA181;
+    padding: 1rem;
+    margin: 0;
+}
+
+.colored-margin::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    background-color: #BFA181; /* Color del margen */
+    z-index: -1;
 }
 
 .form-label {
@@ -435,6 +369,48 @@ a:hover {
     text-align: center;
 }
 
+.colored-margin .form-floating {
+        transition: all 0.3s ease;
+    }
+
+    .colored-margin .form-control,
+    .colored-margin .form-select {
+        color: white !important;
+    }
+
+    .colored-margin .form-floating label {
+        transition: all 0.3s ease;
+        padding-left: 8px;
+    }
+
+    .colored-margin .form-control:focus,
+    .colored-margin .form-select:focus {
+        box-shadow: none !important;
+    }
+
+    .colored-margin .form-floating:focus-within {
+        box-shadow: 0 0 0 2px #BFA181;
+    }
+
+   
+
+    .colored-margin .form-floating > .form-control:not(:placeholder-shown) ~ label,
+    .colored-margin .form-floating > .form-select ~ label,
+    .colored-margin .form-floating > .form-control:focus ~ label {
+        transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+        color: black !important;
+        opacity: 0.9;
+    }
+
+    .colored-margin .form-floating i {
+        transition: all 0.3s ease;
+    }
+
+    .colored-margin button:hover {
+        background-color: #7a6855 !important;
+        color: #fff !important;
+    }
+
 #license:hover {
     color: #0A1828;
 }
@@ -481,7 +457,7 @@ a:hover {
 }
 
 footer {
-    background: linear-gradient(to bottom, black, black);
+    background: black;
     padding-top: 10px;
     margin: 0;
 }
@@ -513,6 +489,8 @@ h3 {
 .footer-content ul {
     text-align: center;
 }
+
+
 
 .list {
     padding: 0;
@@ -672,12 +650,7 @@ a:hover {
     color: #ffffff; /* Texto blanco */
 }
 
-#reservation-container {
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradiente de colores */
-    /* O */
-    background-image: url('ruta/a/tu/imagen.jpg'); /* Imagen de fondo */
-    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-}
+
 
 .btn-primary:hover {
     background-color:#0A1828; /* Cambio de color al pasar el mouse */
@@ -725,7 +698,7 @@ a:hover {
     }
 
     .cuerpo-medio {
-        height: 70vh;
+        height: 80vh;
         /* Aumenta la altura en pantallas medianas */
     }
 
@@ -762,7 +735,7 @@ a:hover {
     }
 
     .cuerpo-medio {
-        height: 50vh;
+        height: 40vh;
         /* Aumenta la altura en pantallas grandes */
     }
 
@@ -958,7 +931,7 @@ a:hover {
 
 @media (max-width: 400px) {
     .cuerpo-medio {
-        height: 150vh;
+        height: 130vh;
         /* Aumenta la altura para dispositivos móviles */
     }
 
