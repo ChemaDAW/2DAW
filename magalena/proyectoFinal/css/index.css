@@ -392,7 +392,33 @@ a:hover {
         box-shadow: 0 0 0 2px #BFA181;
     }
 
-   
+    .w-70 {
+        width: 70% !important;
+    }
+    
+    .btn-count {
+        width: 30px;
+        height: 30px;
+        border-radius: 50% !important;
+        font-weight: bold;
+        border: none !important;
+    }
+    
+    .dropdown-menu {
+        min-width: 300px !important;
+        transform: translate3d(0px, 45px, 0px) !important;
+    }
+    
+    .btn:focus {
+        box-shadow: none !important;
+    }
+
+    /* Ajuste para móviles */
+    @media (max-width: 768px) {
+        .w-70 {
+            width: 95% !important;
+        }
+    }
 
     .colored-margin .form-floating > .form-control:not(:placeholder-shown) ~ label,
     .colored-margin .form-floating > .form-select ~ label,
