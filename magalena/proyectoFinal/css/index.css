@@ -760,7 +760,7 @@ a:hover {
 
 @media (max-width: 767px) {
     .cuerpo-medio {
-        height: 110vh;
+        height: 120vh;
         /* Aumenta la altura para dispositivos móviles */
     }
 
