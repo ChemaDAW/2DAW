@@ -108,27 +108,69 @@ function updateGuests(type, change) {
 
         document.getElementById('guest-selection-text').textContent = text;
     }
-}
-const departureInput = document.getElementById('departure');
+} 
+const departure = document.getElementById('departure');
 const returnInput = document.getElementById('return');
-const displayInput = document.getElementById('date-display');
+const display = document.getElementById('date-display');
+let currentStep = 1; // 1 = ida, 2 = vuelta
 
-// Primer clic: Seleccionar IDA
-displayInput.addEventListener('click', () => {
-    if (!departureInput.value) {
-        departureInput.showPicker(); // Abre el calendario para ida
+function openDatePicker() {
+    if (currentStep === 1 || !departure.value) {
+        departure.click();
+    } else {
+        returnInput.click();
+    }
+}
+
+display.addEventListener('click', () => {
+    if (!departure.value && !returnInput.value) {
+        currentStep = 1;
+        openDatePicker();
+    } else if (departure.value && !returnInput.value) {
+        currentStep = 2;
+        openDatePicker();
+    } else {
+        departure.value = '';
+        returnInput.value = '';
+        returnInput.disabled = true;
+        currentStep = 1;
+        updateDisplay();
     }
 });
 
-// Cuando se selecciona la IDA
-departureInput.addEventListener('change', (e) => {
-    returnInput.min = e.target.value; // Fecha mínima para la vuelta
-    returnInput.disabled = false; // Habilita el campo de vuelta
-    returnInput.showPicker(); // Abre automáticamente el calendario para vuelta
-    displayInput.value = `Ida: ${e.target.value}`;
+departure.addEventListener('change', () => {
+    returnInput.min = departure.value;
+    returnInput.disabled = false;
+    currentStep = 2;
+    
+    // Validar si la vuelta existente es inválida
+    if (returnInput.value && new Date(returnInput.value) < new Date(departure.value)) {
+        alert('La vuelta no puede ser anterior a la ida');
+        returnInput.value = '';
+    }
+    
+    updateDisplay();
+    setTimeout(openDatePicker, 100);
 });
 
-// Cuando se selecciona la VUELTA
-returnInput.addEventListener('change', (e) => {
-    displayInput.value = `Ida: ${departureInput.value} / Vuelta: ${e.target.value}`;
+returnInput.addEventListener('change', () => {
+    if (returnInput.value && new Date(returnInput.value) < new Date(departure.value)) {
+        alert('La vuelta no puede ser anterior a la ida');
+        returnInput.value = '';
+    }
+    updateDisplay();
 });
+
+function updateDisplay() {
+    let texto = '';
+    if (departure.value) texto += `Ida: ${formatDate(departure.value)}`;
+    if (returnInput.value) texto += `${texto ? ' / ' : ''}Vuelta: ${formatDate(returnInput.value)}`;
+    display.textContent = texto || 'Clic para seleccionar'; // Usar textContent para div
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+}
+// En updateDisplay():
+display.textContent = texto || 'Clic para seleccionar'; 
