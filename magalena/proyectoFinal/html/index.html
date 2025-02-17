@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejido Hotel</title>
-    <link rel="icon" href="../img/" type="image/x-icon">
+    <link rel="icon" href="../img/LogoChema.png" type="image/x-icon" />
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Estilos y fuentes -->
+
     <link href="../css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/bickham-script-pro" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand me-auto" href="index.html">
@@ -40,7 +41,7 @@
                             <a class="nav-link mx-lg-2" href="habitaciones.html">Habitaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#">Servicios</a>
+                            <a class="nav-link mx-lg-2" href="servicios.html">Servicios</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-lg-2" href="como-llegar.html">Como Llegar</a>
@@ -52,7 +53,7 @@
                 </div>
             </div>
 
-            <!-- Botón CORREGIDO con ID -->
+            <!-- Botón -->
             <a class="login-button" id="showModalBtn" data-bs-toggle="modal" data-bs-target="#loginModal">Entrar</a>
 
             <button class="navbar-toggler pe-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
@@ -70,12 +71,12 @@
         <div
             class="container d-flex align-items-center justify-content-center flex-column text-white text-center position-absolute top-50 start-50 translate-middle">
             <h1 class="fw-bold mb-3 display-6 display-md-4 display-lg-1" id="tituloHero">Chema Hotel</h1>
-            <h2 class="fw-light  fs-md-4 fs-lg-2" >El Ejido</h2>
+            <h2 class="fw-light  fs-md-4 fs-lg-2">El Ejido</h2>
         </div>
     </section>
 
     <!-- Modal de Login/Registro -->
-    <div class="modal fade" id="loginModal" tabindex="-1"> <!-- Quitamos la clase "fade" -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -95,7 +96,7 @@
                     <div class="tab-content">
                         <!-- Formulario de Login -->
                         <div class="tab-pane fade show active" id="login">
-                            <form>
+                            <form action"" class="formulario__login">
                                 <div class="mb-3">
                                     <label for="loginEmail" class="form-label">Usuario o Correo electrónico</label>
                                     <input type="email" class="form-control" id="loginEmail" required>
@@ -115,18 +116,15 @@
 
                         <!-- Formulario de Registro -->
                         <div class="tab-pane fade" id="register">
-                            <form>
+                            <form action="../php/registro_usuario_be.php" method="POST" class="formulario__register">
                                 <div class="mb-3">
                                     <label for="registerEmail" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="registerEmail" required>
+                                    <input type="email" class="form-control" id="registerEmail" name="correo" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="registerPassword" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="registerPassword" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="confirmPassword" class="form-label">Repetir Contraseña</label>
-                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                    <input type="password" class="form-control" id="registerPassword" name="contrasena"
+                                        required>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Registrarse</button>
                             </form>
@@ -136,39 +134,39 @@
             </div>
         </div>
     </div>
+
+    <!-- Formulario de RESERVA -->
     <div class="card-body p-0 colored-margin" style="background-color: #BFA181; margin: 1rem; position: relative;">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" id="reservation-form" novalidate>
             <!-- Contenedor principal -->
             <div class="container-fluid p-2">
                 <div class="row g-2">
+
                     <!-- Fecha -->
                     <div class="col-12 col-md-3">
                         <div style="background-color: #8f7963; border-radius: 5px; position: relative;">
-                            <!-- Campo visible -->
-                            <input type="text" 
-                                   class="form-control border-0 py-2 w-100" 
-                                   id="date-display" 
-                                   readonly 
-                                   style="background: transparent; color: #fff; cursor: pointer; caret-color: transparent;"
-                                   placeholder="Seleciona Fechas">
-                    
-                            <!-- Inputs reales (ocultos pero funcionales) -->
-                            <input type="date" 
-                                   id="departure" 
-                                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
-                            
-                            <input type="date" 
-                                   id="return" 
-                                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;"
-                                   disabled>
+                            <!-- Campo visible para mostrar fechas seleccionadas -->
+                            <input type="text"
+                                   class="form-control border-0 py-2 w-100"
+                                   id="date-display"
+                                   readonly
+                                   placeholder="Selecciona Fechas" />
+
+                            <!-- Inputs REALES (ocultos) que manejará Flatpickr -->
+                            <input type="text" id="departure" style="display:none;" />
+                            <input type="text" id="return" style="display:none;" disabled />
                         </div>
                     </div>
+
                     <!-- Código -->
                     <div class="col-12 col-md-2">
                         <div style="background-color: #8f7963; border-radius: 5px;">
-                            <input type="text" class="form-control border-0 py-2 w-100" id="input-code"
-                                placeholder="CODIGO DESC." style="background: transparent; color: #fff;"
-                                aria-label="Código de reserva">
+                            <input type="text"
+                                   class="form-control border-0 py-2 w-100"
+                                   id="input-code"
+                                   placeholder="CÓDIGO DESC."
+                                   style="background: transparent; color: #fff;"
+                                   aria-label="Código de reserva" />
                         </div>
                     </div>
 
@@ -179,16 +177,16 @@
                                 <!-- Botón que muestra el desplegable -->
                                 <button
                                     class="btn w-100 border-0 bg-transparent d-flex align-items-center justify-content-between py-2 text-white"
-                                    type="button" id="guestDropdown" data-bs-toggle="dropdown" aria-expanded="false"
-                                    style="color: #BFA181 !important;">
-                                    <span id="guest-selection-text" style="color: black;">HUÉSPEDES</span>
+                                    type="button" id="guestDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span id="guest-selection-text" style="color: black;">
+                                        HUÉSPEDES
+                                    </span>
                                     <i class="fas fa-chevron-down ms-2"></i>
                                 </button>
 
                                 <!-- Contenido del desplegable -->
                                 <div class="dropdown-menu w-100 p-3" aria-labelledby="guestDropdown"
                                     style="background-color: #8f7963; border: none; border-radius: 5px;">
-
                                     <!-- Selector de Adultos -->
                                     <div class="d-flex align-items-center justify-content-between mb-3">
                                         <div>
@@ -253,6 +251,7 @@
         </form>
     </div>
 
+    <!-- Sección contenido intermedio -->
     <section class="cuerpo-medio py-2">
         <div class="container">
             <div class="text-center text-md-start">
@@ -275,7 +274,6 @@
         </div>
     </section>
 
-
     <div class="container-fluid main-container">
         <div class="row">
             <!-- Columna izquierda con el título y la descripción -->
@@ -288,7 +286,7 @@
             <div class="col-md-6 p-5">
                 <form>
                     <div class="mb-4 input-group">
-                        <span class="input-group-text"><i class="fa-solid fa-user"></i></i></span>
+                        <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
                         <input type="text" class="form-control" id="inputNombre" placeholder="nombre" required>
                     </div>
                     <div class="mb-4 input-group">
@@ -308,8 +306,9 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid secon-container" id="secon-container">
-        <h2 class="text-center mb-4">Reseñas de Usuarios</h2> <!-- Título en la parte superior -->
+        <h2 class="text-center mb-4">Reseñas de Usuarios</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card review-card">
@@ -348,6 +347,37 @@
             </button>
         </div>
     </div>
+
+    <!-- Modal SAN VALENTÍN -->
+    <div class="modal fade" id="sanValentinModal" tabindex="-1" aria-labelledby="sanValentinModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" id="sanValentinModalDialog">
+            <div class="modal-content" id="sanValentinModalContent">
+                <div class="modal-header" id="sanValentinModalHeader">
+                    <h5 class="modal-title" id="sanValentinModalLabel">¡Feliz Día de San Valentín!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body text-center" id="sanValentinModalBody">
+                    <img src="../img/feliz-dia-de-san-valentin-san-valentin.gif" alt="Gif de San Valentín"
+                        class="img-fluid mb-3" id="sanValentinModalImage">
+                    <h6 id="sanValentinModalSubTitle">Oferta Especial:</h6>
+                    <p id="sanValentinModalText">¡Habitación doble a mitad de precio!</p>
+                </div>
+                <div class="modal-footer" id="sanValentinModalFooter">
+                    <!-- Sección de precio -->
+                    <p id="sanValentinModalPrice" class="w-100 text-center mb-3">Precio: <strong>€80</strong></p>
+                    <!-- Botones -->
+                    <div class="d-flex justify-content-between w-100">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            id="sanValentinModalCloseBtn">Cerrar</button>
+                        <a href="habitaciones.html#habitaciones" class="btn btn-primary"
+                            id="accederHabitacionesBtn">Acceder a habitaciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -360,8 +390,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="habitaciones.html">Habitaciones</a></li>
                     <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="">Como Llegar</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="como-llegar.html">Como Llegar</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                     <li><a href="https://cheema14.milaulas.com">Formación para empleados y clientes</a></li>
                 </ul>
             </div>
@@ -379,7 +409,7 @@
             </audio>
         </div>
         <div class="bottom-bar">
-            <p>&copy; 2024 Chema Hotel . Todos los derechos reservados</p>
+            <p style="color: black;">&copy; 2024 Chema Hotel . Todos los derechos reservados</p>
         </div>
     </footer>
 
@@ -388,10 +418,144 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <!-- Script personalizado -->
     <script src="../script/script.js"></script>
 
+    <script>
+    /****************************************************
+     *  MANEJO DE HUÉSPEDES
+     ****************************************************/
+    let adultCount = 1;
+    let childCount = 0;
 
-</body>
+    function updateGuests(type, increment) {
+      if (type === "adults") {
+        if (adultCount + increment < 1) return; // No menos de 1 adulto
+        adultCount += increment;
+        document.getElementById("adult-count").textContent = adultCount;
+        document.getElementById("adult-input").value = adultCount;
+      } else if (type === "children") {
+        if (childCount + increment < 0) return; // No menos de 0 niños
+        childCount += increment;
+        document.getElementById("child-count").textContent = childCount;
+        document.getElementById("child-input").value = childCount;
+      }
+      updateGuestText();
+    }
 
-</html>
+    function updateGuestText() {
+      const guestTextElement = document.getElementById("guest-selection-text");
+      let text = "";
+      if (adultCount === 1) {
+        text += `${adultCount} Adulto`;
+      } else {
+        text += `${adultCount} Adultos`;
+      }
+      if (childCount > 0) {
+        text += (childCount === 1) ? `, ${childCount} Niño` : `, ${childCount} Niños`;
+      }
+      if (adultCount === 1 && childCount === 0) {
+        text = "1 Adulto";
+      }
+      guestTextElement.textContent = text;
+    }
+
+    // Inicializamos texto
+    updateGuestText();
+
+
+    /****************************************************
+     *  MANEJO DE FECHAS con Flatpickr
+     ****************************************************/
+    const dateDisplay = document.getElementById("date-display");
+    const departureEl = document.getElementById("departure");
+    const returnEl    = document.getElementById("return");
+
+    // Instancia para SALIDA (ida)
+    const departurePicker = flatpickr(departureEl, {
+      dateFormat: "d/m/Y",
+      minDate: "today",
+      onChange: function(selectedDates, dateStr) {
+        if (selectedDates.length) {
+          // Mostramos la fecha de salida
+          dateDisplay.value = "Salida: " + dateStr;
+          // Habilitar la fecha de regreso
+          returnEl.disabled = false;
+          // Ajustar la fecha mínima
+          returnPicker.set("minDate", selectedDates[0]);
+          // Abrir automáticamente la fecha de regreso
+          returnPicker.open();
+        }
+      }
+    });
+
+    // Instancia para REGRESO (vuelta)
+    const returnPicker = flatpickr(returnEl, {
+      dateFormat: "d/m/Y",
+      onChange: function(selectedDates, dateStr) {
+        if (selectedDates.length) {
+          const salidaDate = departurePicker.selectedDates[0];
+          if (salidaDate) {
+            const salidaStr = departurePicker.formatDate(salidaDate, "d/m/Y");
+            dateDisplay.value = salidaStr + " - " + dateStr;
+          } else {
+            dateDisplay.value = "Regreso: " + dateStr;
+          }
+        }
+      }
+    });
+
+    /**
+     * Al clicar en #date-display:
+     * - Si NO hay fecha de salida, abre salida.
+     * - Si hay salida, pero no hay regreso, abre regreso.
+     * - Si hay salida y regreso, reinicia todo y vuelve a abrir salida.
+     */
+    dateDisplay.addEventListener("click", () => {
+      const departureSelected = (departurePicker.selectedDates.length > 0);
+      const returnSelected    = (returnPicker.selectedDates.length > 0);
+
+      if (!departureSelected) {
+        // Caso 1: No hay nada
+        departurePicker.open();
+      } else if (departureSelected && !returnSelected) {
+        // Caso 2: Hay ida, pero no vuelta
+        returnPicker.open();
+      } else {
+        // Caso 3: Ya hay ida y vuelta => reinicia todo
+        departurePicker.clear();
+        returnPicker.clear();
+        returnEl.disabled = true;
+        dateDisplay.value = "Selecciona Fechas";
+        // Volvemos a abrir la salida
+        departurePicker.open();
+      }
+    });
+
+
+    /****************************************************
+     *  SUBMIT del formulario
+     ****************************************************/
+    const form = document.getElementById("reservation-form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Evitar recarga
+
+      // Recogemos valores
+      const departureDate = departurePicker.input.value; // 'd/m/Y'
+      const returnDate    = returnPicker.input.value;    // 'd/m/Y'
+      const codeValue     = document.getElementById("input-code").value;
+      const adults        = document.getElementById("adult-input").value;
+      const children      = document.getElementById("child-input").value;
+
+      console.log("Fecha de salida:", departureDate);
+      console.log("Fecha de regreso:", returnDate);
+      console.log("Código de descuento:", codeValue);
+      console.log("Adultos:", adults);
+      console.log("Niños:", children);
+
+      alert("¡Formulario enviado! Revisa la consola para ver los datos.");
+    });
+    </script>

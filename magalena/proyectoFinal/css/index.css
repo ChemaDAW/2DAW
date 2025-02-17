@@ -56,6 +56,29 @@ html {
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
+
+    /* Ajuste para el contenedor de fechas */
+    #date-display {
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      caret-color: transparent;
+      border: none;
+    }
+    /* Inputs reales (ocultos) que manejará Flatpickr */
+    #departure,
+    #return {
+      display: none; /* Evitamos conflictos de superposición */
+    }
+    /* Botones +/- huéspedes */
+    .btn-count {
+      width: 30px;
+      height: 30px;
+      border-radius: 50% !important;
+      font-weight: bold;
+      border: none !important;
+    }
+
   .hero-section .container {
     position: relative;
     z-index: 1;
@@ -513,12 +536,116 @@ html {
   .stars button.selected {
     color: gold;
   }
-  
+  /*******************************************
+    MODAL SAN VALENTIN
+  *******************************************/
+  /* MODAL GENERAL */
+#sanValentinModal .modal-dialog {
+  max-width: 500px; /* Ajusta el ancho máximo */
+  transition: transform 0.3s ease-out;
+}
+
+#sanValentinModal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+/* Puedes añadir un efecto de entrada */
+#sanValentinModal.show .modal-dialog {
+  animation: valentinesZoomIn 0.4s forwards;
+}
+
+/* Animación de zoom */
+@keyframes valentinesZoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* CONTENIDO DEL MODAL */
+#sanValentinModalContent {
+  border-radius: 10px; 
+  border: 2px solid #e83e8c; /* Color rosa/rojo */
+  background-color: #fff0f5; /* Fondo con toque rosado */
+}
+
+/* HEADER */
+#sanValentinModalHeader {
+  background-color: #e83e8c; /* Color principal */
+  color: #fff; 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center; /* Centra el título en el header */
+  text-align: center;      /* Asegura que el texto quede centrado */
+  border-bottom: 1px solid #e83e8c;
+}
+
+#sanValentinModalLabel {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+/* BODY */
+#sanValentinModalBody {
+  padding: 20px;
+  color: #343a40; /* color de texto general */
+}
+
+#sanValentinModalImage {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #e83e8c;
+  border-radius: 5px;
+}
+
+#sanValentinModalSubTitle {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #e83e8c;
+}
+
+#sanValentinModalText {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+#sanValentinModalFooter {
+  border-top: none; /* Quitar la línea de separación del footer */
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+#sanValentinModalCloseBtn {
+  background-color: #e83e8c;
+  border: none;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#sanValentinModalCloseBtn:hover {
+  background-color: #d63384; /* Oscurece un poco al pasar el ratón */
+}
+
+/* Ajusta el color de la X de cierre (btn-close) */
+#sanValentinModalHeader .btn-close {
+  filter: invert(1);
+}
+
   /* ========================================
      MEDIA QUERIES
   ======================================== */
   /* Mobile devices (max-width: 767px) */
   @media (max-width: 767px) {
+    
     .cuerpo-medio {
       height: 100vh;
     }
@@ -717,4 +844,29 @@ html {
     }
   }
   
-  
+  /* Estilos para el loader que cubrirá toda la pantalla */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  /* Estilos para el spinner */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

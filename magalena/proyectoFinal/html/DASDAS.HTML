@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Formulario de Reserva con Flatpickr</title>
+  
+  <!-- Bootstrap CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+  />
+  <!-- Font Awesome (para íconos) -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <!-- Flatpickr CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+  />
+
+  <style>
+    /* ===========================
+       Ajustes generales 
+    ============================ */
+    body {
+      background-color: #f8f9fa;
+    }
+    .card-body {
+      background-color: #BFA181; 
+      margin: 1rem; 
+      position: relative;
+    }
+    .col-12.col-md-3 > div {
+      background-color: #8f7963; 
+      border-radius: 5px; 
+      position: relative;
+    }
+
+    /* Campo "falso" para las fechas */
+    #date-display {
+      background: transparent; 
+      color: #fff; 
+      cursor: pointer; 
+      caret-color: transparent;
+      border: none;
+    }
+
+    /* Inputs reales, ocultos con display:none */
+    #departure,
+    #return {
+      display: none; 
+    }
+
+    /* Botones +/- huéspedes */
+    .btn-count {
+      width: 30px;
+      height: 30px;
+      border-radius: 50% !important;
+      font-weight: bold;
+      border: none !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card-body p-0 colored-margin">
+  <form class="needs-validation" id="reservation-form" novalidate>
+    <!-- Contenedor principal -->
+    <div class="container-fluid p-2">
+      <div class="row g-2">
+        
+        <!-- FECHAS -->
+        <div class="col-12 col-md-3">
+          <div>
+            <!-- Campo de texto donde se muestran las fechas -->
+            <input 
+              type="text" 
+              class="form-control border-0 py-2 w-100" 
+              id="date-display" 
+              readonly
+              placeholder="Selecciona Fechas"
+            />
+            <!-- Inputs REALES (manejo con Flatpickr) -->
+            <input type="text" id="departure" />
+            <input type="text" id="return" disabled />
+          </div>
+        </div>
+        
+        <!-- Código de Descuento -->
+        <div class="col-12 col-md-2">
+          <div style="background-color: #8f7963; border-radius: 5px;">
+            <input 
+              type="text" 
+              class="form-control border-0 py-2 w-100" 
+              id="input-code"
+              placeholder="CÓDIGO DESC."
+              style="background: transparent; color: #fff;"
+              aria-label="Código de reserva"
+            />
+          </div>
+        </div>
+
+        <!-- Huéspedes -->
+        <div class="col-12 col-md-3">
+          <div style="background-color: #8f7963; border-radius: 5px;">
+            <div class="dropdown">
+              <!-- Botón que muestra el desplegable -->
+              <button
+                class="btn w-100 border-0 bg-transparent d-flex align-items-center justify-content-between py-2 text-white"
+                type="button" 
+                id="guestDropdown" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+              >
+                <span id="guest-selection-text" style="color: black;">
+                  HUÉSPEDES
+                </span>
+                <i class="fas fa-chevron-down ms-2"></i>
+              </button>
+
+              <!-- Contenido del desplegable -->
+              <div 
+                class="dropdown-menu w-100 p-3" 
+                aria-labelledby="guestDropdown"
+                style="background-color: #8f7963; border: none; border-radius: 5px;"
+              >
+                <!-- Selector de Adultos -->
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <div class="text-white">Adultos</div>
+                    <small style="color: #BFA181;">+12 años</small>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <button 
+                      type="button" 
+                      class="btn btn-sm btn-count"
+                      onclick="updateGuests('adults', -1)"
+                      style="background-color: #BFA181; color: #8f7963;"
+                    >
+                      -
+                    </button>
+                    <span id="adult-count" class="mx-2 text-white">1</span>
+                    <button 
+                      type="button" 
+                      class="btn btn-sm btn-count"
+                      onclick="updateGuests('adults', 1)"
+                      style="background-color: #BFA181; color: #8f7963;"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Selector de Niños -->
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <div class="text-white">Niños</div>
+                    <small style="color: #BFA181;">0-11 años</small>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <button 
+                      type="button" 
+                      class="btn btn-sm btn-count"
+                      onclick="updateGuests('children', -1)"
+                      style="background-color: #BFA181; color: #8f7963;"
+                    >
+                      -
+                    </button>
+                    <span id="child-count" class="mx-2 text-white">0</span>
+                    <button 
+                      type="button" 
+                      class="btn btn-sm btn-count"
+                      onclick="updateGuests('children', 1)"
+                      style="background-color: #BFA181; color: #8f7963;"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Inputs ocultos para el formulario -->
+                <input type="hidden" name="adults" id="adult-input" value="1">
+                <input type="hidden" name="children" id="child-input" value="0">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón de Reserva -->
+        <div class="col-12 col-md-4">
+          <button 
+            type="submit"
+            class="btn btn-primary btn-lg w-100 rounded-0 d-flex align-items-center justify-content-center py-2"
+            style="border: none; box-shadow: none; background-color: #8f7963; color: #BFA181; font-weight: 600;"
+          >
+            <i class="fas fa-concierge-bell me-2"></i>
+            <span>RESERVA</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+/* =====================================================
+   1) Manejo de HUÉSPEDES 
+====================================================== */
+let adultCount = 1;
+let childCount = 0;
+
+function updateGuests(type, increment) {
+  if (type === "adults") {
+    if (adultCount + increment < 1) return; // Evita menos de 1 adulto
+    adultCount += increment;
+    document.getElementById("adult-count").textContent = adultCount;
+    document.getElementById("adult-input").value = adultCount;
+  } else if (type === "children") {
+    if (childCount + increment < 0) return; // Evita menos de 0 niños
+    childCount += increment;
+    document.getElementById("child-count").textContent = childCount;
+    document.getElementById("child-input").value = childCount;
+  }
+  updateGuestText();
+}
+
+function updateGuestText() {
+  const guestTextElement = document.getElementById("guest-selection-text");
+  let text = "";
+  if (adultCount === 1) {
+    text += `${adultCount} Adulto`;
+  } else {
+    text += `${adultCount} Adultos`;
+  }
+  if (childCount > 0) {
+    text += (childCount === 1) ? `, ${childCount} Niño` : `, ${childCount} Niños`;
+  }
+  if (adultCount === 1 && childCount === 0) {
+    text = "1 Adulto";
+  }
+  guestTextElement.textContent = text;
+}
+
+// Inicializamos texto
+updateGuestText();
+
+
+/* =====================================================
+   2) Manejo de FECHAS con Flatpickr
+====================================================== */
+const dateDisplay = document.getElementById("date-display");
+const departureEl = document.getElementById("departure");
+const returnEl    = document.getElementById("return");
+
+// Instancia SALIDA
+const departurePicker = flatpickr(departureEl, {
+  dateFormat: "d/m/Y",
+  minDate: "today",
+  onChange: function(selectedDates, dateStr) {
+    if (selectedDates.length) {
+      // Muestra la fecha de salida
+      dateDisplay.value = "Salida: " + dateStr;
+      // Habilita la fecha de regreso
+      returnEl.disabled = false;
+      // Ajustar la fecha mínima de regreso
+      returnPicker.set("minDate", selectedDates[0]);
+      // (Requisito 1): Abre automáticamente el calendario de regreso
+      returnPicker.open();
+    }
+  }
+});
+
+// Instancia REGRESO
+const returnPicker = flatpickr(returnEl, {
+  dateFormat: "d/m/Y",
+  onChange: function(selectedDates, dateStr) {
+    if (selectedDates.length) {
+      const salidaDate = departurePicker.selectedDates[0];
+      if (salidaDate) {
+        const salidaStr = departurePicker.formatDate(salidaDate, "d/m/Y");
+        dateDisplay.value = salidaStr + " - " + dateStr;
+      } else {
+        dateDisplay.value = "Regreso: " + dateStr;
+      }
+    }
+  }
+});
+
+/**
+ * Lógica del click en #date-display:
+ * - Si NO hay fecha de salida, abre SALIDA.
+ * - Si hay salida pero no hay regreso, abre REGRESO.
+ * - Si ya hay salida y regreso, reinicia todo y abre SALIDA.
+ */
+dateDisplay.addEventListener("click", () => {
+  const departureSelected = departurePicker.selectedDates.length > 0;
+  const returnSelected    = returnPicker.selectedDates.length > 0;
+
+  // CASO 1: No hay nada seleccionado
+  if (!departureSelected) {
+    departurePicker.open();
+  
+  // CASO 2: Hay salida, pero no hay regreso
+  } else if (departureSelected && !returnSelected) {
+    returnPicker.open();
+  
+  // CASO 3: Hay salida y regreso
+  } else {
+    // (Requisito 2): "Se reinicia todo"
+    departurePicker.clear();
+    returnPicker.clear();
+    returnEl.disabled = true;
+    dateDisplay.value = "Selecciona Fechas";
+    // Y volvemos a abrir la salida
+    departurePicker.open();
+  }
+});
+
+
+/* =====================================================
+   3) Submit del formulario
+====================================================== */
+const form = document.getElementById("reservation-form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // Evita recarga de página
+  
+  // Recogemos valores
+  const departureDate = departurePicker.input.value; // 'd/m/Y'
+  const returnDate    = returnPicker.input.value;    // 'd/m/Y'
+  const codeValue     = document.getElementById("input-code").value;
+  const adults        = document.getElementById("adult-input").value;
+  const children      = document.getElementById("child-input").value;
+
+  console.log("Fecha de salida:", departureDate);
+  console.log("Fecha de regreso:", returnDate);
+  console.log("Código de descuento:", codeValue);
+  console.log("Adultos:", adults);
+  console.log("Niños:", children);
+
+  alert("¡Formulario enviado! Revisa la consola para ver los datos.");
+});
+</script>
+</body>
+</html>
