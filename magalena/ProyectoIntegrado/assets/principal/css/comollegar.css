@@ -1,0 +1,765 @@
+/* ========================================
+   RESET & GLOBAL
+======================================== */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Calisto MT", "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+  }
+  
+  /* ========================================
+     MAIN
+  ======================================== */
+  main {
+    flex: 1;
+  }
+  
+  /* ========================================
+     ENLACES
+  ======================================== */
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #178582;
+  }
+  
+/*========================================
+  HERO SECTION & VIDEO
+======================================== */
+@font-face {
+ font-family: 'trajan';
+ src: url('../fuente/Free License.otf') format('otf');
+ font-weight: normal;
+ font-style: normal;
+}
+
+.hero-section {
+ min-height: 50vh; /* Altura mínima para que se vea bien */
+ position: relative;
+ width: 100%;
+ overflow: hidden;
+ font-family: "trajan", serif;
+}
+
+/* Capa semitransparente de overlay */
+.hero-section::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background-color: rgba(0, 0, 0, 0.6);
+ z-index: 0;
+}
+
+/* Contenedor del contenido del hero */
+.hero-section .container {
+ position: relative;
+ z-index: 1;
+ /* Usamos un padding vertical para dar espacio cuando la pantalla es pequeña */
+ padding: 4rem 1rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ /* La altura se adapta al contenido, pero respeta el min-height del padre */
+ min-height: inherit;
+}
+
+/* Estilos de los títulos */
+.hero-section h1 {
+ font-size: 4rem;
+ margin: 0.5rem 0;
+ color: white;
+}
+
+.hero-section h2 {
+ font-size: 3rem;
+ margin: 0.5rem 0;
+ color: white;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+ .hero-section h1 {
+   font-size: 3rem;
+ }
+ .hero-section h2 {
+   font-size: 2rem;
+ }
+}
+
+@media (max-width: 400px) {
+ .hero-section {
+   padding: 3rem 0.5rem;
+ }
+ .hero-section h1 {
+   font-size: 2.5rem;
+ }
+ .hero-section h2 {
+   font-size: 1.8rem;
+ }
+}
+
+/* Se unifican las propiedades del video de fondo */
+.hero-video {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ z-index: -1;
+ filter: brightness(70%);
+}
+  
+  /* ========================================
+     NAVBAR
+  ======================================== */
+  .navbar {
+    background-color: white;
+    height: 80px;
+    margin: 10px;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-brand {
+    margin-left: 5%;
+  }
+  .navbar-brand img {
+    max-width: 70px;
+    height: auto;
+  }
+  .navbar-toggler,
+  .btn-close {
+    border: none;
+    font-size: 1.25cm;
+    outline: none;
+    box-shadow: none;
+  }
+  .navbar li {
+    margin-left: 0.5cm;
+  }
+  .nav-link {
+    color: grey;
+    font-weight: 500;
+    position: relative;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: black;
+  }
+  
+  /* ========================================
+     CUERPO MEDIO
+  ======================================== */
+  .cuerpo-medio {
+    background-color: #0A1828;
+  }
+  #tituloCuerpoMedio {
+    color: #BFA181;
+  }
+  #subtituloCuerpoMedio {
+    color: #178582;
+  }
+  #parrafoCuerpoMedio {
+    color: white;
+  }
+  
+  /* ========================================
+     BOTONES
+  ======================================== */
+  .login-button {
+    background-color: #178582;
+    color: white;
+    font-size: 18px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    z-index: 2;
+  }
+  .login-button:hover {
+    background-color: #0A1828;
+  }
+  
+  #boton-habitaciones {
+    background-color: #BFA181;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 24px;
+    transition: background-color 0.3s ease;
+    margin-top: 3rem;
+    justify-content: center;
+  }
+  #boton-habitaciones:hover {
+    background-color: #178582;
+    color: #0A1828;
+  }
+  
+  #submit-button {
+    background-color: #BFA181;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0;
+    transition: background-color 0.3s;
+  }
+  #submit-button:hover {
+    background-color: #0A1828;
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #178582;
+    border-color: #007bff;
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background-color: #0A1828;
+    border-color: #333;
+  }
+  
+  .btn-custom {
+    background-color: #BFA181;
+    color: #343a40;
+    font-weight: bold;
+    width: 75%;
+    border: none;
+  }
+  .btn-custom:hover {
+    background-color: #0A1828;
+    color: white;
+  }
+  
+  /* ========================================
+     FORMULARIOS & CAMPOS
+  ======================================== */
+  .form-control {
+    width: 100%;
+    background-color: #f8f9fa;
+    color: #BFA181;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 2px solid #333;
+  }
+  .form-control:focus {
+    border-color: #BFA181;
+    box-shadow: 0 0 5px rgba(255, 183, 3, 0.5);
+  }
+  .input-group-text {
+    background-color: #178582;
+    color: #0A1828;
+    border: none;
+  }
+  .form-check-label,
+  .form-text {
+    color: black;
+  }
+  #inputEmail,
+  #inputNombre {
+    max-width: 70%;
+  }
+  
+  /* ========================================
+     CONTENEDORES PRINCIPALES & CONTENIDO
+  ======================================== */
+  .main-container {
+    width: 100%;
+    padding: 50px;
+    background: linear-gradient(135deg, white, white);
+    color: black;
+  }
+  .secon-container {
+    width: 100%;
+    padding: 50px;
+    background: #0A1828;
+    color: black;
+  }
+  .left-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #BFA181;
+  }
+  .left-content p {
+    font-size: 18px;
+    color: black;
+  }
+  
+  /* ========================================
+     RESERVATION CARD & FORM
+  ======================================== */
+  #reservation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2em;
+    margin: 0;
+    padding: 0;
+  }
+  #reservation-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #BFA181;
+    padding: 1rem;
+    margin: 0;
+  }
+  .colored-margin::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    background-color: #BFA181;
+    z-index: -1;
+  }
+  .form-label {
+    color: #BFA181;
+    font-weight: 500;
+  }
+  .form-control,
+  .form-select {
+    border-radius: 0;
+    color: #178582;
+  }
+  
+  /* ========================================
+     DROPDOWN & BOTONES DE CONTADOR
+  ======================================== */
+  .btn-count {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% !important;
+    font-weight: bold;
+    border: none !important;
+  }
+  .dropdown-menu {
+    min-width: 300px !important;
+    transform: translate3d(0px, 45px, 0px) !important;
+  }
+  .btn:focus {
+    box-shadow: none !important;
+  }
+  
+  /* ========================================
+     COLORED MARGIN PARA FORMULARIOS
+  ======================================== */
+  .colored-margin .form-floating {
+    transition: all 0.3s ease;
+  }
+  .colored-margin .form-control,
+  .colored-margin .form-select {
+    color: white !important;
+  }
+  .colored-margin .form-floating label {
+    transition: all 0.3s ease;
+    padding-left: 8px;
+  }
+  .colored-margin .form-control:focus,
+  .colored-margin .form-select:focus {
+    box-shadow: none !important;
+  }
+  .colored-margin .form-floating:focus-within {
+    box-shadow: 0 0 0 2px #BFA181;
+  }
+  .colored-margin .form-floating > .form-control:not(:placeholder-shown) ~ label,
+  .colored-margin .form-floating > .form-select ~ label,
+  .colored-margin .form-floating > .form-control:focus ~ label {
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    color: black !important;
+    opacity: 0.9;
+  }
+  .colored-margin .form-floating i {
+    transition: all 0.3s ease;
+  }
+  .colored-margin button:hover {
+    background-color: #7a6855 !important;
+    color: #fff !important;
+  }
+  
+  /* Utility */
+  .w-70 {
+    width: 70% !important;
+  }
+  
+  /* ========================================
+     REVIEWS
+  ======================================== */
+  .review-container {
+    background-color: #178582;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .review-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+  }
+  .review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .secon-container h2 {
+    color: #BFA181;
+  }
+  .card-title {
+    font-weight: bold;
+    color: #178582;
+  }
+  .card-text {
+    color: #555;
+  }
+  
+  /* ========================================
+     AUDIO
+  ======================================== */
+  #audio {
+    display: none;
+  }
+  
+  /* ========================================
+     CURSOR & ANIMACIONES
+  ======================================== */
+  .cursor {
+    border-right: 2px solid black;
+    height: 1.2em;
+    animation: parpadeo 1s step-end infinite;
+  }
+  @keyframes escribir {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes parpadeo {
+    50% { border-color: transparent; }
+  }
+  
+  /* ========================================
+     FOOTER
+  ======================================== */
+  footer {
+    background: black;
+    padding-top: 10px;
+    margin: 0;
+  }
+  footer .container {
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-content {
+    width: 33.3%;
+    margin-top: 2%;
+  }
+  .footer-content p {
+    width: 190px;
+    margin: auto;
+    padding: 7px;
+    color: white;
+  }
+  .footer-content ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .footer-content li {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    list-style: none;
+  }
+  .footer-content li::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 2px;
+    background: #178582;
+    transition: width 0.5s;
+  }
+  .footer-content li:hover::before {
+    width: 70px;
+  }
+  .social-icons {
+    list-style: none;
+    text-align: center;
+    margin-top: 20%;
+    padding: 0;
+  }
+  .social-icons li {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 5px;
+  }
+  .social-icons i {
+    color: white;
+    font-size: 25px;
+  }
+  .bottom-bar {
+    background: #BFA181;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+  }
+  .bottom-bar p {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+  }
+  
+  /* ========================================
+     MODAL & ESTRELLAS
+  ======================================== */
+  .modal-content {
+    margin: auto;
+    max-width: 500px;
+  }
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .stars button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+  }
+  .stars button.selected {
+    color: gold;
+  }
+  
+  /* ========================================
+     MEDIA QUERIES
+  ======================================== */
+  /* Mobile devices (max-width: 767px) */
+  @media (max-width: 767px) {
+    .cuerpo-medio {
+      height: 100vh;
+    }
+    .cuerpo-medio h1 {
+      font-size: 3.5rem;
+    }
+    .cuerpo-medio h3 {
+      font-size: 2.2rem;
+    }
+    .cuerpo-medio p {
+      font-size: 1.3rem;
+      max-width: 90%;
+    }
+  
+    .navbar {
+        justify-content: center;    /* Centra los elementos en el contenedor */
+        padding: 0.5rem;            /* Reduce el padding para mayor compacidad */
+        margin: 10px ;   
+        height: auto;        /* Ajusta el margin para centrar el navbar */
+      }
+     
+      .navbar li {
+        margin: 0 0.5rem;           /* Reduce el margen entre elementos */
+      }
+    .login-button {
+      font-size: 14px;
+      padding: 6px 15px;
+      margin-top: 10px;
+    }
+    .main-container,
+    .secon-container {
+      padding: 20px;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .left-content h2 {
+      font-size: 24px;
+    }
+    .left-content p {
+      font-size: 16px;
+    }
+    .btn-custom {
+      font-size: 14px;
+    }
+    .form-control,
+    .input-group-text {
+      font-size: 14px;
+    }
+    .review-card {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    .review-card .card-title {
+      font-size: 16px;
+    }
+    .review-card .card-text {
+      font-size: 14px;
+    }
+    #boton-habitaciones {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+    footer .container {
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      padding: 0;
+    }
+    .footer-content {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .footer-content p,
+    .footer-content ul,
+    .social-icons {
+      text-align: center;
+    }
+    .social-icons li {
+      margin: 0 5px;
+    }
+    .bottom-bar p {
+      font-size: 14px;
+    }
+  }
+  
+  /* Tablets and up (min-width: 768px) */
+  @media (min-width: 768px) {
+    .hero-section h1 {
+      font-size: 4.5rem;
+    }
+    .hero-section h2 {
+      font-size: 2.5rem;
+    }
+    .cuerpo-medio {
+      height: 80vh;
+    }
+    .cuerpo-medio h1 {
+      font-size: 3.5rem;
+    }
+    .cuerpo-medio p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Large screens (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 2px;
+      background-color: #178582;
+      visibility: hidden;
+      transition: 0.3s ease-in-out;
+    }
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      width: 100%;
+      visibility: visible;
+    }
+    .cuerpo-medio {
+      height: 40vh;
+    }
+    .cuerpo-medio h1 {
+      font-size: 4rem;
+    }
+    .cuerpo-medio h3 {
+      font-size: 2rem;
+    }
+    .cuerpo-medio p {
+      font-size: 1.5rem;
+      max-width: 1200px;
+    }
+  }
+  
+  /* Extra small screens (max-width: 576px) */
+  @media (max-width: 576px) {
+    .footer-content {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .social-icons {
+      margin: 10px 0;
+    }
+    .social-icons li {
+      margin: 0 5px;
+    }
+    .bottom-bar {
+      padding: 5px 0;
+    }
+  }
+  
+  /* Very small screens (max-width: 400px) */
+  @media (max-width: 400px) {
+    .cuerpo-medio {
+        height: auto;    
+    }
+    .cuerpo-medio h1 {
+      font-size: 3.5rem;
+    }
+    .cuerpo-medio h3 {
+      font-size: 2.2rem;
+    }
+    .cuerpo-medio p {
+      font-size: 1.3rem;
+      max-width: 90%;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Ajustes para el Navbar */
+    .navbar {
+      justify-content: center;    /* Centra los elementos en el contenedor */
+      padding: 0.5rem;            /* Reduce el padding para mayor compacidad */
+      margin: 5px auto;   
+      height: auto;        /* Ajusta el margin para centrar el navbar */
+    }
+   
+    .navbar li {
+      margin: 0 0.5rem;           /* Reduce el margen entre elementos */
+    }
+    
+    /* Ajustes para el cuerpo medio */
+    .cuerpo-medio {
+      height: auto;               /* Elimina la altura fija para que se adapte al contenido */
+      padding: 2rem 0;            /* Ajusta el padding vertical para un espacio interno adecuado */
+    }
+    
+    /* Si usas títulos o párrafos con tamaños fijos, podrías ajustarlos también */
+    .cuerpo-medio h1 {
+      font-size: 3rem;            /* Disminuye el tamaño del título si es necesario */
+    }
+    .cuerpo-medio p {
+      font-size: 1.1rem;          /* Reduce el tamaño del párrafo para un mejor ajuste */
+    }
+  }
+  
+  
