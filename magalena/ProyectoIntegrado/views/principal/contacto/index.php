@@ -34,7 +34,7 @@
       <!-- Formulario de Contacto -->
       <div class="col-md-7 mb-4" style="padding-right: 60px;">
         <h2 class="mb-3" style="color: #178582;">Envíanos un mensaje</h2>
-        <form action="#" method="post" class="needs-validation" novalidate>
+        <form action="https://formspree.io/f/manqdrnn" method="POST" class="needs-validation" novalidate>
           <div class="mb-3">
             <label for="nombre" class="form-label" style="color: #BFA181;">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
